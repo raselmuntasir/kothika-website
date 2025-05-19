@@ -1,0 +1,86 @@
+/* Course Filter Styles */
+.course-filter-container {
+    @apply bg-white rounded-lg shadow-sm p-4 md:p-6 mb-8;
+}
+
+.course-filter-title {
+    @apply text-xl font-semibold text-gray-800 mb-4;
+}
+
+.filter-options {
+    @apply flex flex-col sm:flex-row gap-3;
+}
+
+.filter-select {
+    @apply px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Course List Styles */
+.course-list {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.course-card {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow;
+}
+
+.course-card-image {
+    @apply w-full h-48 object-cover relative;
+}
+
+.course-category-badge {
+    @apply absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded;
+}
+
+.course-card-body {
+    @apply p-4;
+}
+
+.course-title {
+    @apply font-semibold text-lg mb-1;
+}
+
+.course-instructor {
+    @apply text-gray-600 text-sm mb-2;
+}
+
+.course-rating {
+    @apply flex items-center mb-2;
+}
+
+.course-stars {
+    @apply text-yellow-500 mr-1;
+}
+
+.course-rating-value {
+    @apply text-gray-600 text-sm;
+}
+
+.course-meta {
+    @apply flex justify-between items-center text-sm text-gray-600 mb-3;
+}
+
+.course-price-section {
+    @apply flex justify-between items-center;
+}
+
+.course-price {
+    @apply font-bold text-lg;
+}
+
+.enroll-btn {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition;
+}
+
+/* Loading State */
+.loading-state {
+    @apply text-center py-8 hidden;
+}
+
+.loading-spinner {
+    @apply inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-2;
+}
+
+.loading-text {
+    @apply text-gray-600;
+}

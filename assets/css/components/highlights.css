@@ -1,0 +1,68 @@
+/* Highlights Section */
+.highlights-section {
+    @apply py-16;
+}
+
+.highlights-title {
+    @apply text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12;
+}
+
+.highlight-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
+}
+
+.highlight-box {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-8 text-center border border-gray-100;
+}
+
+.highlight-icon-container {
+    @apply w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-4xl;
+}
+
+.highlight-icon-blue {
+    @apply bg-blue-50 text-blue-600;
+}
+
+.highlight-icon-green {
+    @apply bg-green-50 text-green-600;
+}
+
+.highlight-icon-purple {
+    @apply bg-purple-50 text-purple-600;
+}
+
+.highlight-icon-yellow {
+    @apply bg-yellow-50 text-yellow-600;
+}
+
+.highlight-icon-red {
+    @apply bg-red-50 text-red-600;
+}
+
+.highlight-icon-indigo {
+    @apply bg-indigo-50 text-indigo-600;
+}
+
+.highlight-box-title {
+    @apply text-xl font-bold text-gray-900 mb-3;
+}
+
+.highlight-box-description {
+    @apply text-gray-600 mb-4;
+}
+
+.highlight-badges {
+    @apply flex justify-center gap-2 mt-4;
+}
+
+.highlight-badge {
+    @apply inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full;
+}
+
+.highlight-link {
+    @apply text-sm text-blue-600 hover:text-blue-700 font-medium transition mt-4 inline-block;
+}
+
+.highlight-link-arrow {
+    @apply ml-1;
+}

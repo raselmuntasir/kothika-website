@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কাঠিকা - ডিজিটাল মার্কেটিং এজেন্সি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'bangla': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#181E38',
+                        secondary: '#F9CF42',
+                        accent: '#E94742',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-gradient-kothika {
+            background: linear-gradient(45deg, #F9CF42, #E94742);
+        }
+        .header-dark {
+            background-color: #181E38;
+        }
+        .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .has-tooltip:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-bangla bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+    <!-- হেডার -->
+    <header class="header-dark shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- লোগো -->
+            <div class="flex items-center">
+                <img src="assets/images/kothika-logo.png" alt="Kothika Logo" class="h-10">
+            </div>
+            
+            <!-- ডেস্কটপ নেভিগেশন -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-white hover:text-secondary flex flex-col items-center has-tooltip">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span class="text-xs mt-1">হোম</span>
+                    <div class="tooltip absolute bg-black text-white text-xs px-2 py-1 rounded mt-8">হোম</div>
+                </a>
+                <a href="courses.html" class="text-white hover:text-secondary flex flex-col items-center has-tooltip">
+                    <i data-lucide="book-open-text" class="w-5 h-5"></i>
+                    <span class="text-xs mt-1">কোর্স</span>
+                    <div class="tooltip absolute bg-black text-white text-xs px-2 py-1 rounded mt-8">কোর্স</div>
+                </a>
+                <a href="blog.html" class="text-white hover:text-secondary flex flex-col items-center has-tooltip">
+                    <i data-lucide="newspaper" class="w-5 h-5"></i>
+                    <span class="text-xs mt-1">ব্লগ</span>
+                    <div class="tooltip absolute bg-black text-white text-xs px-2 py-1 rounded mt-8">ব্লগ</div>
+                </a>
+                <a href="about.html" class="text-white hover:text-secondary flex flex-col items-center has-tooltip">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                    <span class="text-xs mt-1">আমাদের সম্পর্কে</span>
+                    <div class="tooltip absolute bg-black text-white text-xs px-2 py-1 rounded mt-8">আমাদের সম্পর্কে</div>
+                </a>
+                <a href="contact.html" class="text-white hover:text-secondary flex flex-col items-center has-tooltip">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span class="text-xs mt-1">যোগাযোগ</span>
+                    <div class="tooltip absolute bg-black text-white text-xs px-2 py-1 rounded mt-8">যোগাযোগ</div>
+                </a>
+            </nav>
+
+            <!-- মোবাইল মেনু বাটন -->
+            <button id="mobileMenuButton" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- ইউজার প্রোফাইল ও ডার্ক মোড -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 text-white">
+                        <img src="assets/images/user-default.png" alt="User" class="w-8 h-8 rounded-full border-2 border-secondary">
+                    </button>
+                    <div class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg py-1 group-hover:block z-50">
+                        <div class="px-4 py-2 border-b dark:border-gray-600">
+                            <p class="text-sm font-medium text-gray-700 dark:text-gray-200">ডার্ক মোড</p>
+                            <button id="themeToggle" class="mt-1 p-2 rounded-full bg-gray-200 dark:bg-gray-600">
+                                <i data-lucide="sun" class="dark:hidden w-4 h-4"></i>
+                                <i data-lucide="moon" class="hidden dark:block w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <a href="profile.html" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">প্রোফাইল</a>
+                        <a href="settings.html" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">সেটিংস</a>
+                        <a href="login.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600">লগআউট</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- মোবাইল মেনু -->
+        <div id="mobileMenu" class="hidden md:hidden bg-primary dark:bg-gray-900 px-4 py-2">
+            <a href="index.html" class="block py-2 text-white flex items-center">
+                <i data-lucide="home" class="w-4 h-4 mr-2"></i> হোম
+            </a>
+            <a href="courses.html" class="block py-2 text-white flex items-center">
+                <i data-lucide="book-open-text" class="w-4 h-4 mr-2"></i> কোর্স
+            </a>
+            <a href="blog.html" class="block py-2 text-white flex items-center">
+                <i data-lucide="newspaper" class="w-4 h-4 mr-2"></i> ব্লগ
+            </a>
+            <a href="about.html" class="block py-2 text-white flex items-center">
+                <i data-lucide="info" class="w-4 h-4 mr-2"></i> আমাদের সম্পর্কে
+            </a>
+            <a href="contact.html" class="block py-2 text-white flex items-center">
+                <i data-lucide="mail" class="w-4 h-4 mr-2"></i> যোগাযোগ
+            </a>
+            <div class="border-t border-gray-700 my-2"></div>
+            <div class="flex justify-between items-center py-2">
+                <span class="text-white text-sm">ডার্ক মোড</span>
+                <button id="mobileThemeToggle" class="p-1 rounded-full bg-gray-200 dark:bg-gray-600">
+                    <i data-lucide="sun" class="dark:hidden w-4 h-4"></i>
+                    <i data-lucide="moon" class="hidden dark:block w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- হিরো সেকশন -->
+        <section class="hero bg-gradient-kothika text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">আপনার ব্যবসাকে ডিজিটালে নিয়ে আসুন</h1>
+                <p class="text-lg md:text-xl mb-8">পেশাদার ডিজিটাল মার্কেটিং সমাধান</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="courses.html" class="inline-block bg-white text-accent px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                        কোর্স ব্রাউজ করুন
+                    </a>
+                    <a href="contact.html" class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-accent transition duration-300">
+                        ফ্রী কনসাল্টেশন
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- সেবা সমূহ -->
+        <section class="py-16 bg-white dark:bg-gray-700">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">আমাদের সেবাসমূহ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- সেবা ১ -->
+                    <div class="bg-gray-50 dark:bg-gray-600 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="text-secondary mb-4">
+                            <i data-lucide="trending-up" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">সোশ্যাল মিডিয়া মার্কেটিং</h3>
+                        <p class="text-gray-600 dark:text-gray-300">ফেসবুক, ইনস্টাগ্রামে আপনার ব্র্যান্ডের উপস্থিতি বৃদ্ধি করুন</p>
+                    </div>
+                    
+                    <!-- সেবা ২ -->
+                    <div class="bg-gray-50 dark:bg-gray-600 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="text-secondary mb-4">
+                            <i data-lucide="search" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">এসইও সার্ভিস</h3>
+                        <p class="text-gray-600 dark:text-gray-300">গুগলে আপনার ওয়েবসাইটের র্যাঙ্কিং উন্নত করুন</p>
+                    </div>
+                    
+                    <!-- সেবা ৩ -->
+                    <div class="bg-gray-50 dark:bg-gray-600 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="text-secondary mb-4">
+                            <i data-lucide="pen-tool" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">কন্টেন্ট মার্কেটিং</h3>
+                        <p class="text-gray-600 dark:text-gray-300">গুণগত কন্টেন্ট তৈরি করে অডিয়েন্স জয় করুন</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- কোর্স সেকশন -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold">জনপ্রিয় কোর্সসমূহ</h2>
+                    <a href="courses.html" class="text-accent hover:underline flex items-center">
+                        সব দেখুন <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- কোর্স ১ -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="assets/images/course1.jpg" alt="SEO Course" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">এসইও মাস্টারি কোর্স</h3>
+                                <span class="bg-secondary text-primary px-2 py-1 rounded text-sm font-bold">৳৫,৯৯৯</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">গুগল র্যাঙ্কিংয়ে শীর্ষে উঠুন</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i data-lucide="star" class="text-yellow-500 w-4 h-4 fill-current"></i>
+                                    <span class="ml-1 text-sm">৪.৯ (১২৫)</span>
+                                </div>
+                                <a href="course-details.html" class="text-accent hover:underline text-sm">এনরোল করুন</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- কোর্স ২ -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="assets/images/course2.jpg" alt="Social Media Course" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">সোশ্যাল মিডিয়া মার্কেটিং</h3>
+                                <span class="bg-secondary text-primary px-2 py-1 rounded text-sm font-bold">৳৪,৫০০</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">ফেসবুক, ইনস্টাগ্রামে বিজনেস বৃদ্ধি</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i data-lucide="star" class="text-yellow-500 w-4 h-4 fill-current"></i>
+                                    <span class="ml-1 text-sm">৪.৭ (৯৮)</span>
+                                </div>
+                                <a href="course-details.html" class="text-accent hover:underline text-sm">এনরোল করুন</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- কোর্স ৩ -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="assets/images/course3.jpg" alt="Content Marketing" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">কন্টেন্ট মার্কেটিং</h3>
+                                <span class="bg-secondary text-primary px-2 py-1 rounded text-sm font-bold">৳৩,৯৯৯</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">ভাইরাল কন্টেন্ট তৈরি শিখুন</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i data-lucide="star" class="text-yellow-500 w-4 h-4 fill-current"></i>
+                                    <span class="ml-1 text-sm">৪.৮ (১০৭)</span>
+                                </div>
+                                <a href="course-details.html" class="text-accent hover:underline text-sm">এনরোল করুন</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- টেস্টিমোনিয়াল -->
+        <section class="py-16 bg-white dark:bg-gray-700">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">ক্লায়েন্ট প্রতিক্রিয়া</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gray-50 dark:bg-gray-600 rounded-xl shadow-md p-8">
+                        <div class="flex items-center mb-6">
+                            <img src="assets/images/client1.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">আহমেদ রাফি</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">ই-কমার্স ব্যবসায়ী</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-200 mb-4">
+                            "কাঠিকার এসইও সার্ভিসে আমার ওয়েবসাইটের ট্রাফিক ৩০০% বৃদ্ধি পেয়েছে। তাদের পেশাদারিত্ব এবং সময়ানুবর্তিতা সত্যিই প্রশংসনীয়।"
+                        </p>
+                        <div class="flex">
+                            <i data-lucide="star" class="text-yellow-500 w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="text-yellow-500 w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="text-yellow-500 w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="text-yellow-500 w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="text-yellow-500 w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- সিটি টু অ্যাকশন -->
+        <section class="py-16 bg-gradient-kothika text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">আপনার ব্যবসাকে ডিজিটালে নিয়ে আসতে প্রস্তুত?</h2>
+                <p class="mb-8 max-w-2xl mx-auto">আমাদের বিশেষজ্ঞ দলের সাথে পরামর্শ করুন এবং আপনার ব্যবসার জন্য সঠিক ডিজিটাল মার্কেটিং স্ট্র্যাটেজি নির্ধারণ করুন।</p>
+                <a href="contact.html" class="inline-block bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    ফ্রী কনসাল্টেশন বুক করুন
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ফুটার -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- কোম্পানি তথ্য -->
+                <div>
+                    <img src="assets/images/kothika-logo-white.png" alt="Kothika Logo" class="h-10 mb-4">
+                    <p class="mb-4">ডিজিটাল মার্কেটিং এজেন্সি</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- লিংকস -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">লিংকস</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="footer-link hover:text-secondary">হোম</a></li>
+                        <li><a href="courses.html" class="footer-link hover:text-secondary">কোর্স</a></li>
+                        <li><a href="blog.html" class="footer-link hover:text-secondary">ব্লগ</a></li>
+                        <li><a href="about.html" class="footer-link hover:text-secondary">আমাদের সম্পর্কে</a></li>
+                        <li><a href="contact.html" class="footer-link hover:text-secondary">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- সেবা -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">সেবা</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-secondary">এসইও সার্ভিস</a></li>
+                        <li><a href="#" class="footer-link hover:text-secondary">সোশ্যাল মিডিয়া মার্কেটিং</a></li>
+                        <li><a href="#" class="footer-link hover:text-secondary">কন্টেন্ট মার্কেটিং</a></li>
+                        <li><a href="#" class="footer-link hover:text-secondary">ওয়েব ডেভেলপমেন্ট</a></li>
+                        <li><a href="#" class="footer-link hover:text-secondary">গ্রাফিক্স ডিজাইন</a></li>
+                    </ul>
+                </div>
+                
+                <!-- যোগাযোগ -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">যোগাযোগ</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>১২৩/বি, বিজনেস স্ট্রিট, ঢাকা</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="mail" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>info@kothika.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="phone" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>+৮৮০ ১৭XX-XXXXXX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="clock" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>শনি-বৃহ: সকাল ৯টা - রাত ১০টা</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p>&copy; ২০২৩ কাঠিকা. সকল অধিকার সংরক্ষিত</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide আইকন ইনিশিয়ালাইজ
+        lucide.createIcons();
+        
+        // মোবাইল মেনু টগল
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        // থিম টগল ফাংশন (ডেস্কটপ)
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', function() {
+            toggleTheme();
+        });
+
+        // থিম টগল ফাংশন (মোবাইল)
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        mobileThemeToggle.addEventListener('click', function() {
+            toggleTheme();
+        });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            
+            // আইকন আপডেট
+            const icons = document.querySelectorAll('[data-lucide="sun"], [data-lucide="moon"]');
+            icons.forEach(icon => {
+                if (isDark) {
+                    icon.classList.remove('hidden');
+                    icon.setAttribute('data-lucide', 'sun');
+                } else {
+                    icon.classList.remove('hidden');
+                    icon.setAttribute('data-lucide', 'moon');
+                }
+            });
+            lucide.createIcons();
+        }
+
+        // পেজ লোড時に থিম চেক
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        // টুলটিপ ফাংশন
+        document.querySelectorAll('.has-tooltip').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const tooltip = this.querySelector('.tooltip');
+                tooltip.classList.remove('hidden');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('.tooltip');
+                tooltip.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

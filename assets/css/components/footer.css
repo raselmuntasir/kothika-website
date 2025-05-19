@@ -1,0 +1,80 @@
+/* Footer Styles */
+.site-footer {
+    @apply bg-white border-t py-12;
+}
+
+.footer-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-8;
+}
+
+.footer-about {
+    @apply space-y-4;
+}
+
+.footer-logo {
+    @apply flex items-center gap-2;
+}
+
+.footer-logo-img {
+    @apply h-10 w-10 rounded-full;
+}
+
+.footer-logo-text {
+    @apply text-xl font-semibold text-gray-800;
+}
+
+.footer-description {
+    @apply text-gray-600 text-sm;
+}
+
+.social-links {
+    @apply flex gap-4 pt-2;
+}
+
+.social-link {
+    @apply text-gray-400 hover:text-blue-600 transition;
+}
+
+.footer-section-title {
+    @apply text-gray-800 font-medium mb-4;
+}
+
+.footer-links {
+    @apply space-y-2 text-sm text-gray-600;
+}
+
+.footer-link {
+    @apply hover:text-blue-600 transition;
+}
+
+.newsletter-form {
+    @apply flex gap-2;
+}
+
+.newsletter-input {
+    @apply px-3 py-2 border border-gray-300 rounded text-sm w-full focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+.newsletter-btn {
+    @apply px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition;
+}
+
+.copyright-section {
+    @apply border-t border-gray-100 py-6 flex flex-col md:flex-row justify-between items-center;
+}
+
+.copyright-text {
+    @apply text-sm text-gray-600 text-center md:text-left mb-4 md:mb-0;
+}
+
+.footer-social-links {
+    @apply flex gap-4;
+}
+
+.footer-social-link {
+    @apply text-gray-400 hover:text-blue-600 transition;
+}

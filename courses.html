@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কোর্সসমূহ - কাঠিকা</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-bangla bg-gray-50">
+    <!-- হেডার সেকশন -->
+    <header class="bg-white border-b shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- লোগো এবং ব্র্যান্ড নাম -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img
+                            src="assets/images/kothika-logo.png"
+                            alt="Kothika Logo"
+                            class="h-10 w-10 rounded-full object-cover"
+                        />
+                        <span class="text-xl font-semibold text-gray-800 tracking-tight">
+                            কাঠিকা
+                        </span>
+                    </a>
+                </div>
+
+                <!-- নেভিগেশন মেনু -->
+                <nav class="hidden md:flex gap-6 text-gray-700 text-sm font-medium">
+                    <a href="index.html" class="hover:text-blue-600 transition">হোম</a>
+                    <a href="courses.html" class="text-blue-600 transition">কোর্স</a>
+                    <a href="blog.html" class="hover:text-blue-600 transition">ব্লগ</a>
+                    <a href="about.html" class="hover:text-blue-600 transition">আমাদের সম্পর্কে</a>
+                    <a href="contact.html" class="hover:text-blue-600 transition">যোগাযোগ</a>
+                </nav>
+
+                <!-- লগইন / সাইনআপ বাটন -->
+                <div class="flex items-center gap-3">
+                    <a
+                        href="#"
+                        class="px-4 py-1.5 text-sm text-gray-600 border border-gray-300 rounded hover:bg-gray-100 transition"
+                    >
+                        লগইন
+                    </a>
+                    <a
+                        href="#"
+                        class="px-4 py-1.5 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded transition"
+                    >
+                        নিবন্ধন
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- পেজ হেডার -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">আমাদের সকল কোর্স</h1>
+                <p class="text-lg text-gray-600">বিভিন্ন ক্যাটাগরির প্রফেশনাল কোর্স একসাথে</p>
+            </div>
+
+            <!-- ফিল্টার সেকশন -->
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <h2 class="text-xl font-semibold text-gray-800">আপনার পছন্দের কোর্স খুঁজুন</h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                        <select id="sortBy" class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="alphabetical">সর্ট: বর্ণানুক্রমিক</option>
+                            <option value="recent">সর্ট: নতুন প্রথম</option>
+                            <option value="popular">সর্ট: জনপ্রিয়তা</option>
+                        </select>
+
+                        <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="all">সকল ক্যাটাগরি</option>
+                            <option value="digital-marketing">ডিজিটাল মার্কেটিং</option>
+                            <option value="video-editing">ভিডিও এডিটিং</option>
+                            <option value="business">ব্যবসা</option>
+                            <option value="graphic-design">গ্রাফিক ডিজাইন</option>
+                        </select>
+
+                        <select id="instructorFilter" class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="all">সকল ইনস্ট্রাক্টর</option>
+                            <option value="rasel">রাসেল আহমেদ</option>
+                            <option value="kamrul">কামরুল হাসান</option>
+                            <option value="barshan">বারশন দেব</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- কোর্স লিস্ট -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="courseList">
+                <!-- কোর্স কার্ড ১ -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/courses/facebook-ads-course.jpg" alt="ফেসবুক এডস কোর্স" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">ডিজিটাল মার্কেটিং</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">ফেসবুক এডস মাস্টারি</h3>
+                        <p class="text-gray-600 text-sm mb-2">ইনস্ট্রাক্টর: রাসেল আহমেদ</p>
+                        
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="text-gray-600 text-sm">(৪.৮)</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
+                            <span><i class="fas fa-users mr-1"></i> ১,২৪৫</span>
+                            <span><i class="far fa-clock mr-1"></i> ৬ ঘণ্টা ৩০ মিনিট</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg">৳২,৯৯৯</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition">
+                                এনরোল করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কোর্স কার্ড ২ -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/courses/premiere-pro-course.jpg" alt="প্রিমিয়ার প্রো কোর্স" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">ভিডিও এডিটিং</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">প্রিমিয়ার প্রো এডিটিং</h3>
+                        <p class="text-gray-600 text-sm mb-2">ইনস্ট্রাক্টর: কামরুল হাসান</p>
+                        
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="text-gray-600 text-sm">(৪.৬)</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
+                            <span><i class="fas fa-users mr-1"></i> ৮৯২</span>
+                            <span><i class="far fa-clock mr-1"></i> ৮ ঘণ্টা ১৫ মিনিট</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg">৳২,৪৯৯</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition">
+                                এনরোল করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- কোর্স কার্ড ৩ -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/courses/startup-strategy-course.jpg" alt="স্টার্টআপ স্ট্রাটেজি কোর্স" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">ব্যবসা</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">স্টার্টআপ স্ট্রাটেজি</h3>
+                        <p class="text-gray-600 text-sm mb-2">ইনস্ট্রাক্টর: বারশন দেব</p>
+                        
+                        <div class="flex items-center mb-2">
+                            <span class="text-yellow-500 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="text-gray-600 text-sm">(৪.৯)</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
+                            <span><i class="fas fa-users mr-1"></i> ৫৬৭</span>
+                            <span><i class="far fa-clock mr-1"></i> ৫ ঘণ্টা ৪৫ মিনিট</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-lg">৳৩,৪৯৯</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition">
+                                এনরোল করুন
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- লোডিং স্টেট -->
+            <div id="loading" class="text-center py-12 hidden">
+                <div class="inline-block animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-600 mb-4"></div>
+                <p class="text-gray-600">কোর্স লোড হচ্ছে...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ফুটার সেকশন -->
+    <footer class="bg-white border-t mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
+                <!-- কোম্পানি তথ্য -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/kothika-logo.png" alt="Kothika Logo" class="h-10 w-10 rounded-full">
+                        <span class="text-xl font-semibold text-gray-800">কাঠিকা</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        শিক্ষার মাধ্যমে দক্ষতা উন্নয়নে পথপ্রদর্শক
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-blue-600 transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-800 transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- দ্রুত লিঙ্ক -->
+                <div>
+                    <h3 class="text-gray-800 font-medium mb-4">দ্রুত লিঙ্ক</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="index.html" class="hover:text-blue-600 transition">হোম</a></li>
+                        <li><a href="courses.html" class="hover:text-blue-600 transition">কোর্স</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">প্রাইসিং</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">সাকসেস স্টোরি</a></li>
+                        <li><a href="blog.html" class="hover:text-blue-600 transition">ব্লগ</a></li>
+                    </ul>
+                </div>
+
+                <!-- সাপোর্ট -->
+                <div>
+                    <h3 class="text-gray-800 font-medium mb-4">সাপোর্ট</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-blue-600 transition">হেল্প সেন্টার</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition">যোগাযোগ</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">টার্মস অফ সার্ভিস</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">রিফান্ড পলিসি</a></li>
+                    </ul>
+                </div>
+
+                <!-- নিউজলেটার -->
+                <div>
+                    <h3 class="text-gray-800 font-medium mb-4">নিউজলেটার</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        নতুন কোর্স এবং অফার সম্পর্কে আপডেট পেতে সাবস্ক্রাইব করুন
+                    </p>
+                    <form class="flex gap-2">
+                        <input 
+                            type="email" 
+                            placeholder="আপনার ইমেইল" 
+                            class="px-3 py-2 border border-gray-300 rounded text-sm w-full focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            required
+                        >
+                        <button 
+                            type="submit" 
+                            class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition"
+                        >
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- বটম ফুটার -->
+            <div class="border-t border-gray-100 py-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-600 text-center md:text-left mb-4 md:mb-0">
+                    © ২০২৫ কাঠিকা - একটি উদ্যোগ প্রিটেন্ডমাইন্ড লিমিটেডের। সর্বস্বত্ব সংরক্ষিত।
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition" title="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-600 transition" title="YouTube">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-black transition" title="TikTok">
+                        <i data-lucide="music" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- লুসিড আইকন লোড করুন -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- কোর্স ফিল্টার স্ক্রিপ্ট -->
+    <script src="assets/js/course-filter.js"></script>
+</body>
+</html>

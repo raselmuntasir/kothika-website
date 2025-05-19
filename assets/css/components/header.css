@@ -1,0 +1,67 @@
+/* Header Styles */
+.site-header {
+    @apply bg-white py-4 sticky top-0 z-50 transition-all duration-300;
+}
+
+.header-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center;
+}
+
+.logo-link {
+    @apply flex items-center gap-2;
+}
+
+.logo-img {
+    @apply h-10 w-10 rounded-full object-cover;
+}
+
+.logo-text {
+    @apply text-xl font-semibold text-gray-800 tracking-tight;
+}
+
+.main-nav {
+    @apply hidden md:flex gap-6;
+}
+
+.nav-link {
+    @apply text-gray-700 text-sm font-medium hover:text-blue-600 transition;
+}
+
+.auth-buttons {
+    @apply flex items-center gap-3;
+}
+
+.login-btn {
+    @apply px-4 py-1.5 text-sm text-gray-600 border border-gray-300 rounded hover:bg-gray-100 transition;
+}
+
+.signup-btn {
+    @apply px-4 py-1.5 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded transition;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    @apply md:hidden p-2 rounded-md text-gray-700 focus:outline-none;
+}
+
+.mobile-menu {
+    @apply hidden md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-2 px-4;
+}
+
+.mobile-menu.active {
+    @apply block;
+}
+
+.mobile-nav-link {
+    @apply block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded;
+}
+
+/* Sticky Header Styles */
+.header-sticky {
+    @apply shadow-md bg-white/95 backdrop-blur-sm;
+}
+
+/* Active Link Styles */
+.nav-link.active {
+    @apply text-blue-600 font-semibold;
+}

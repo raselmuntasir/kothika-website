@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ - কাঠিকা</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-bangla bg-gray-50">
+    <div data-include="includes/header.html"></div>
+
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold text-center mb-12">আমাদের সাথে যোগাযোগ করুন</h1>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- যোগাযোগ ফর্ম -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+                        <h2 class="text-2xl font-bold mb-6">মেসেজ পাঠান</h2>
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">আপনার নাম</label>
+                                    <input type="text" id="name" name="name" required 
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">ইমেইল ঠিকানা</label>
+                                    <input type="email" id="email" name="email" required 
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">বিষয়</label>
+                                <input type="text" id="subject" name="subject" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">মেসেজ</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" 
+                                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                                মেসেজ পাঠান
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- যোগাযোগ তথ্য -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+                        <h2 class="text-2xl font-bold mb-6">যোগাযোগের তথ্য</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg">ফোন</h3>
+                                    <p class="text-gray-600">+880 1234 567890</p>
+                                    <p class="text-gray-600">+880 9876 543210</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg">ইমেইল</h3>
+                                    <p class="text-gray-600">info@kothika.com</p>
+                                    <p class="text-gray-600">support@kothika.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg">ঠিকানা</h3>
+                                    <p class="text-gray-600">১২৩ লার্নিং স্ট্রিট</p>
+                                    <p class="text-gray-600">ডিজিটাল এলাকা, ঢাকা ১২১২</p>
+                                    <p class="text-gray-600">বাংলাদেশ</p>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <h3 class="font-semibold text-lg mb-3">সামাজিক যোগাযোগ</h3>
+                                <div class="flex gap-4">
+                                    <a href="#" class="text-gray-500 hover:text-blue-600 transition" title="Facebook">
+                                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-500 hover:text-blue-400 transition" title="Twitter">
+                                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-500 hover:text-pink-500 transition" title="Instagram">
+                                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-500 hover:text-red-600 transition" title="YouTube">
+                                        <i data-lucide="youtube" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-500 hover:text-blue-800 transition" title="LinkedIn">
+                                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- গুগল ম্যাপ -->
+                <div class="mt-12 bg-white rounded-xl shadow-sm overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.862833727728!2d90.3993144154319!3d23.75091108458713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhaka%201205!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd" 
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-include="includes/footer.html"></div>
+    
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log({ name, email, subject, message });
+            
+            // Show success message
+            alert('আপনার মেসেজ সফলভাবে পাঠানো হয়েছে! আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
