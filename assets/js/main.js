@@ -16,8 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 lucide.createIcons();
                 
                 // Initialize header menu if header.html is loaded
-                if (file.includes('header.html') && typeof initializeHeaderMenu === 'function') {
-                    initializeHeaderMenu();
+                if (file.includes('header.html')) {
+                    // Wait for DOM to be fully updated
+                    setTimeout(() => {
+                        if (typeof initializeHeaderMenu === 'function') {
+                            initializeHeaderMenu();
+                        }
+                    }, 0);
                 }
             })
             .catch(error => console.error('Error loading include:', error));
@@ -36,7 +41,10 @@ function initializeHeader() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath || 
+            (currentPath.endsWith('/') && linkPath === 'index.html') ||
+            (currentPath.endsWith(linkPath))) {
             link.classList.add('active');
         }
     });
