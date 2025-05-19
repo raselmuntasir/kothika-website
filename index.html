@@ -71,13 +71,12 @@
             background: linear-gradient(45deg, #F9CF42, #E94742);
         }
         .tooltip {
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
+            @apply absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-3 py-1.5 rounded-md text-sm whitespace-nowrap opacity-0 transition-all duration-200 transform translate-y-2;
+            pointer-events: none;
+            z-index: 50;
         }
-        .has-tooltip:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
+        .group:hover .tooltip {
+            @apply opacity-100 translate-y-0;
         }
     </style>
 </head>
@@ -293,24 +292,16 @@
                 <!-- যোগাযোগ -->
                 <div>
                     <h3 class="text-lg font-bold mb-4">যোগাযোগ</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i data-lucide="map-pin" class="mr-2 mt-1 w-4 h-4"></i>
-                            <span>১২৩/বি, বিজনেস স্ট্রিট, ঢাকা</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="mail" class="mr-2 mt-1 w-4 h-4"></i>
-                            <span>info@kothika.com</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="phone" class="mr-2 mt-1 w-4 h-4"></i>
-                            <span>+৮৮০ ১৭XX-XXXXXX</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="clock" class="mr-2 mt-1 w-4 h-4"></i>
-                            <span>শনি-বৃহ: সকাল ৯টা - রাত ১০টা</span>
-                        </li>
-                    </ul>
+                    <div class="contact-info">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-[#E94742]"></i>
+                            <a href="mailto:raselmoontasir@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">raselmoontasir@gmail.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-[#E94742]"></i>
+                            <a href="tel:+8801314147868" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">+880 1314 147868</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -322,6 +313,7 @@
 
     <!-- স্ক্রিপ্ট -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/components/header.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
 </body>

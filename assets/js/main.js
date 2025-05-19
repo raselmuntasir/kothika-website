@@ -1,73 +1,37 @@
 // হেডার/ফুটার ইনক্লুড করার ফাংশন
-document.addEventListener('DOMContentLoaded', async () => {
-    // Load all includes
-    document.querySelectorAll('[data-include]').forEach(element => {
-        fetch(element.getAttribute('data-include'))
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Load HTML includes
+    const includes = document.querySelectorAll('[data-include]');
+    
+    includes.forEach(include => {
+        const file = include.getAttribute('data-include');
+        fetch(file)
             .then(response => response.text())
-            .then(html => {
-                element.innerHTML = html;
-                if (element.getAttribute('data-include').includes('header.html')) {
-                    initializeHeader();
-                }
+            .then(data => {
+                include.innerHTML = data;
+                // Reinitialize icons after loading includes
                 lucide.createIcons();
+                
+                // Initialize header menu if header.html is loaded
+                if (file.includes('header.html') && typeof initializeHeaderMenu === 'function') {
+                    initializeHeaderMenu();
+                }
             })
-            .catch(error => {
-                console.error('Error loading include:', error);
-            });
+            .catch(error => console.error('Error loading include:', error));
     });
 
     // জনপ্রিয় কোর্স লোড
-    if (document.getElementById('popularCourses')) {
+    const popularCourses = document.getElementById('popularCourses');
+    if (popularCourses) {
         loadPopularCourses();
-    }
-
-    // পেজ লোড時に থিম চেক
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
     }
 });
 
 // Initialize header components
 function initializeHeader() {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 
-                mobileMenuBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
-            );
-        });
-    }
-
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const mobileMenuButton = document.getElementById('mobileMenuButton');
-
-    function toggleTheme() {
-        const html = document.documentElement;
-        const isDark = html.getAttribute('data-theme') === 'dark';
-        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        
-        // আইকন আপডেট
-        const icons = document.querySelectorAll('[data-lucide="sun"], [data-lucide="moon"]');
-        icons.forEach(icon => {
-            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-        });
-        lucide.createIcons();
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', toggleTheme);
-    }
-
     // Set active nav link
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');

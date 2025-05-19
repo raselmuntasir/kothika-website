@@ -1,103 +1,109 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Mobile menu toggle functionality
-    const mobileMenuButton = document.getElementById('mobileMenuButton');
+function initializeHeaderMenu() {
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+    if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            // Reinitialize icons after showing menu
+            lucide.createIcons();
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
         });
     }
 
-    // User menu toggle functionality
-    const userMenuButton = document.getElementById('userMenuButton');
+    // User menu toggle
+    const userMenuBtn = document.getElementById('userMenuBtn');
     const userMenu = document.getElementById('userMenu');
-    
-    if (userMenuButton && userMenu) {
-        // Toggle menu on click
-        userMenuButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+
+    if (userMenuBtn && userMenu) {
+        userMenuBtn.addEventListener('click', () => {
             userMenu.classList.toggle('hidden');
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!userMenu.contains(e.target) && !userMenuButton.contains(e.target)) {
+        document.addEventListener('click', (e) => {
+            if (!userMenuBtn.contains(e.target) && !userMenu.contains(e.target)) {
                 userMenu.classList.add('hidden');
             }
         });
-
-        // Prevent menu from closing when clicking inside
-        userMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
     }
 
-    // Theme toggle functionality
+    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
-    
-    if (themeToggle) {
+    const sunIcon = themeToggle?.querySelector('[data-lucide="sun"]');
+    const moonIcon = themeToggle?.querySelector('[data-lucide="moon"]');
+
+    if (themeToggle && sunIcon && moonIcon) {
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+            updateThemeIcons(savedTheme === 'dark');
         }
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Update icons
-            const sunIcon = themeToggle.querySelector('[data-lucide="sun"]');
-            const moonIcon = themeToggle.querySelector('[data-lucide="moon"]');
-            
-            if (newTheme === 'dark') {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            } else {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            }
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcons(isDark);
         });
     }
 
-    // Sticky header with shadow on scroll
-    const header = document.querySelector('header');
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg', 'bg-white/95', 'backdrop-blur-sm');
-                header.classList.remove('bg-white');
-            } else {
-                header.classList.remove('shadow-lg', 'bg-white/95', 'backdrop-blur-sm');
-                header.classList.add('bg-white');
-            }
-        });
+    function updateThemeIcons(isDark) {
+        if (sunIcon && moonIcon) {
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+        }
     }
+
+    // Sticky header
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            header.classList.add('shadow-lg', 'bg-[#181E38]/95', 'backdrop-blur-sm');
+        } else {
+            header.classList.remove('shadow-lg', 'bg-[#181E38]/95', 'backdrop-blur-sm');
+        }
+        
+        lastScroll = currentScroll;
+    });
 
     // Active link highlighting
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
-    
+
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage) {
+        if (link.getAttribute('href') === currentPath.split('/').pop()) {
             link.classList.add('text-[#E94742]');
-            link.classList.remove('text-gray-300');
         }
     });
 
-    // স্ক্রিন সাইজ পরিবর্তনে মেনু বন্ধ
+    // Close mobile menu on resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024 && mobileMenu) {
             mobileMenu.classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
         }
     });
-});
+}
