@@ -1,24 +1,82 @@
 // হেডার/ফুটার ইনক্লুড করার ফাংশন
-document.addEventListener("DOMContentLoaded", function() {
-    const includes = document.querySelectorAll('[data-include]');
-    
-    includes.forEach(include => {
-        const file = include.getAttribute('data-include');
-        fetch(file)
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load all includes
+    document.querySelectorAll('[data-include]').forEach(element => {
+        fetch(element.getAttribute('data-include'))
             .then(response => response.text())
-            .then(data => {
-                include.innerHTML = data;
+            .then(html => {
+                element.innerHTML = html;
+                if (element.getAttribute('data-include').includes('header.html')) {
+                    initializeHeader();
+                }
+                lucide.createIcons();
             })
             .catch(error => {
-                console.error('Error loading include file:', error);
+                console.error('Error loading include:', error);
             });
     });
 
-    // জনপ্রিয় কোর্স লোড
+    // জনপ্রিয় কোর্স লোড
     if (document.getElementById('popularCourses')) {
         loadPopularCourses();
     }
+
+    // পেজ লোড時に থিম চেক
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
 });
+
+// Initialize header components
+function initializeHeader() {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 
+                mobileMenuBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+            );
+        });
+    }
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        
+        // আইকন আপডেট
+        const icons = document.querySelectorAll('[data-lucide="sun"], [data-lucide="moon"]');
+        icons.forEach(icon => {
+            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+        });
+        lucide.createIcons();
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', toggleTheme);
+    }
+
+    // Set active nav link
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+}
 
 function loadPopularCourses() {
     // জনপ্রিয় কোর্স লোড করার লজিক

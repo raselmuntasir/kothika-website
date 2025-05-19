@@ -1,67 +1,65 @@
-<header class="bg-white dark:bg-[#181E38] border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-0 z-50">
+<header class="bg-[#181E38] border-b border-gray-700 shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-            <!-- লোগো এবং ব্র্যান্ড নাম -->
+            <!-- লোগো -->
             <div class="flex items-center gap-3">
-                <a href="index.html" class="flex items-center gap-2">
+                <a href="index.html">
                     <img
                         src="assets/images/kothika-logo.png"
                         alt="Kothika Logo"
-                        class="h-10 w-10 object-cover"
+                        class="h-10 w-auto"
                     />
-                    <span class="text-xl font-semibold text-gray-800 dark:text-white tracking-tight hidden sm:block">
-                        কাঠিকা
-                    </span>
                 </a>
+            </div>
+
+            <!-- সার্চ বার -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input 
+                        type="text" 
+                        placeholder="কোর্স, ব্লগ, বা যেকোনো কিছু খুঁজুন..." 
+                        class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E94742] placeholder-gray-400"
+                    >
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- ডেস্কটপ নেভিগেশন মেনু -->
             <nav class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="group flex flex-col items-center text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition relative">
-                    <i data-lucide="home" class="w-5 h-5"></i>
-                    <span class="text-xs mt-1">হোম</span>
-                    <div class="absolute -bottom-1 w-full h-0.5 bg-[#E94742] scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                <a href="index.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative">
+                    <i data-lucide="home" class="w-6 h-6"></i>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">হোম</span>
                 </a>
-                <a href="courses.html" class="group flex flex-col items-center text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition relative">
-                    <i data-lucide="book-open-text" class="w-5 h-5"></i>
-                    <span class="text-xs mt-1">কোর্স</span>
-                    <div class="absolute -bottom-1 w-full h-0.5 bg-[#E94742] scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                <a href="courses.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative">
+                    <i data-lucide="book-open-text" class="w-6 h-6"></i>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">কোর্স</span>
                 </a>
-                <a href="blog.html" class="group flex flex-col items-center text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition relative">
-                    <i data-lucide="newspaper" class="w-5 h-5"></i>
-                    <span class="text-xs mt-1">ব্লগ</span>
-                    <div class="absolute -bottom-1 w-full h-0.5 bg-[#E94742] scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                <a href="blog.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative">
+                    <i data-lucide="newspaper" class="w-6 h-6"></i>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">ব্লগ</span>
                 </a>
-                <a href="about.html" class="group flex flex-col items-center text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition relative">
-                    <i data-lucide="info" class="w-5 h-5"></i>
-                    <span class="text-xs mt-1">আমাদের সম্পর্কে</span>
-                    <div class="absolute -bottom-1 w-full h-0.5 bg-[#E94742] scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                <a href="about.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative">
+                    <i data-lucide="info" class="w-6 h-6"></i>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">আমাদের সম্পর্কে</span>
                 </a>
-                <a href="contact.html" class="group flex flex-col items-center text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition relative">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span class="text-xs mt-1">যোগাযোগ</span>
-                    <div class="absolute -bottom-1 w-full h-0.5 bg-[#E94742] scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                <a href="contact.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">যোগাযোগ</span>
                 </a>
             </nav>
 
             <!-- ডান পাশের এলাকা -->
             <div class="flex items-center gap-4">
-                <!-- মোবাইল থিম টগল -->
-                <button id="mobileThemeToggle" class="md:hidden p-2 text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <i data-lucide="sun" class="dark:hidden w-5 h-5"></i>
-                    <i data-lucide="moon" class="hidden dark:block w-5 h-5"></i>
+                <!-- মোবাইল মেনু বাটন -->
+                <button id="mobileMenuButton" class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
                 
-                <!-- লগইন/রেজিস্টার বাটন (মোবাইল ভিউ) -->
-                <div class="md:hidden flex items-center gap-2">
-                    <a href="#" class="p-2 text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <i data-lucide="log-in" class="w-5 h-5"></i>
-                    </a>
-                </div>
-
-                <!-- ডেস্কটপ ভিউ বাটন -->
+                <!-- লগইন/রেজিস্টার বাটন -->
                 <div class="hidden md:flex items-center gap-3">
-                    <a href="#" class="px-4 py-1.5 text-sm text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <a href="#" class="px-4 py-1.5 text-sm text-gray-300 border border-gray-600 rounded hover:bg-gray-700 transition">
                         লগইন
                     </a>
                     <a href="#" class="px-4 py-1.5 text-sm text-white bg-[#E94742] hover:bg-[#d13a36] rounded transition">
@@ -70,31 +68,37 @@
                 </div>
 
                 <!-- ইউজার প্রোফাইল ড্রপডাউন -->
-                <div class="hidden md:block relative group">
-                    <button class="flex items-center gap-1">
+                <div class="hidden md:block relative">
+                    <button id="userMenuButton" class="flex items-center gap-1">
                         <img 
                             src="assets/images/user-default.png" 
                             alt="User" 
-                            class="w-8 h-8 rounded-full border-2 border-gray-200 dark:border-gray-600"
+                            class="w-8 h-8 rounded-full border-2 border-gray-600"
                         />
                     </button>
                     
                     <!-- ড্রপডাউন মেনু -->
-                    <div class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-md shadow-lg py-1 group-hover:block z-50 border border-gray-200 dark:border-gray-600">
-                        <div class="px-4 py-2 border-b dark:border-gray-600">
-                            <p class="text-sm font-medium text-gray-700 dark:text-gray-200">ডার্ক মোড</p>
-                            <button id="themeToggle" class="mt-1 p-2 rounded-full bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
-                                <i data-lucide="sun" class="dark:hidden w-4 h-4"></i>
-                                <i data-lucide="moon" class="hidden dark:block w-4 h-4"></i>
+                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
+                        <div class="px-4 py-2 border-b border-gray-700">
+                            <p class="text-sm font-medium text-gray-300">ডার্ক মোড</p>
+                            <button id="themeToggle" data-theme-toggle class="mt-1 p-2 rounded-full bg-gray-700 hover:bg-gray-600">
+                                <i data-lucide="sun" class="dark:hidden w-4 h-4 text-gray-300"></i>
+                                <i data-lucide="moon" class="hidden dark:block w-4 h-4 text-gray-300"></i>
                             </button>
                         </div>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                             <i data-lucide="user" class="w-4 h-4 mr-2 inline"></i> প্রোফাইল
                         </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                            <i data-lucide="bookmark" class="w-4 h-4 mr-2 inline"></i> সেভ করা
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                            <i data-lucide="bell" class="w-4 h-4 mr-2 inline"></i> নোটিফিকেশন
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                             <i data-lucide="settings" class="w-4 h-4 mr-2 inline"></i> সেটিংস
                         </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <a href="#" class="block px-4 py-2 text-sm text-red-400 hover:bg-gray-700">
                             <i data-lucide="log-out" class="w-4 h-4 mr-2 inline"></i> লগআউট
                         </a>
                     </div>
@@ -103,34 +107,3 @@
         </div>
     </div>
 </header>
-
-<script>
-    // Lucide আইকন ইনিশিয়ালাইজ
-    lucide.createIcons();
-
-    // থিম টগল ফাংশন
-    function toggleTheme() {
-        const html = document.documentElement;
-        const isDark = html.getAttribute('data-theme') === 'dark';
-        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        
-        // আইকন আপডেট
-        const icons = document.querySelectorAll('[data-lucide="sun"], [data-lucide="moon"]');
-        icons.forEach(icon => {
-            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-        });
-        lucide.createIcons();
-    }
-
-    // ডেস্কটপ থিম টগল
-    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
-    
-    // মোবাইল থিম টগল
-    document.getElementById('mobileThemeToggle')?.addEventListener('click', toggleTheme);
-
-    // পেজ লোড時に থিম চেক
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-</script>

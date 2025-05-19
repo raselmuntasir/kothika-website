@@ -8,17 +8,61 @@ document.addEventListener("DOMContentLoaded", function() {
             e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
+        });
+    }
+
+    // User menu toggle functionality
+    const userMenuButton = document.getElementById('userMenuButton');
+    const userMenu = document.getElementById('userMenu');
+    
+    if (userMenuButton && userMenu) {
+        // Toggle menu on click
+        userMenuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            userMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!userMenu.contains(e.target) && !userMenuButton.contains(e.target)) {
+                userMenu.classList.add('hidden');
+            }
+        });
+
+        // Prevent menu from closing when clicking inside
+        userMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    
+    if (themeToggle) {
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            // Toggle icon between menu and x
-            const menuIcon = mobileMenuButton.querySelector('.menu-icon');
-            const closeIcon = mobileMenuButton.querySelector('.close-icon');
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
             
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
+            // Update icons
+            const sunIcon = themeToggle.querySelector('[data-lucide="sun"]');
+            const moonIcon = themeToggle.querySelector('[data-lucide="moon"]');
+            
+            if (newTheme === 'dark') {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
             } else {
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
             }
         });
     }
@@ -44,16 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop();
         if (linkPage === currentPage) {
-            link.classList.add('text-blue-600', 'font-semibold');
-            link.classList.remove('text-gray-700');
-        }
-    });
-
-    // বাইরে ক্লিক করে মেনু বন্ধ
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+            link.classList.add('text-[#E94742]');
+            link.classList.remove('text-gray-300');
         }
     });
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" dir="ltr" data-theme="light" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="font-bangla bg-gray-50">
+<body class="font-bangla bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+    <!-- স্কিপ নেভিগেশন লিংক -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">মূল কন্টেন্টে যান</a>
+
+    <!-- হেডার -->
     <div data-include="includes/header.html"></div>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
             <div class="container mx-auto px-4 text-center">

@@ -34,18 +34,29 @@ h3 {
     @apply text-2xl md:text-3xl;
 }
 
+/* Tooltip Styles */
+.tooltip {
+    @apply absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-3 py-1.5 rounded-md text-sm whitespace-nowrap opacity-0 transition-all duration-200 transform translate-y-2;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.group:hover .tooltip {
+    @apply opacity-100 translate-y-0;
+}
+
 /* Buttons */
 .btn-primary {
-    @apply inline-flex items-center px-8 py-3.5 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 
+    @apply inline-flex items-center px-8 py-3.5 bg-[#E94742] hover:bg-[#d13a36] dark:bg-[#E94742] dark:hover:bg-[#d13a36] 
            text-white font-semibold rounded-lg transition-all duration-300 
-           focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900/40
+           focus:ring-4 focus:ring-[#E94742]/30 dark:focus:ring-[#E94742]/40
            transform hover:-translate-y-0.5;
 }
 
 .btn-outline {
-    @apply inline-flex items-center px-8 py-3.5 border-2 border-blue-600 dark:border-blue-500 
-           text-blue-600 dark:text-blue-400 font-semibold rounded-lg 
-           hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-300;
+    @apply inline-flex items-center px-8 py-3.5 border-2 border-[#E94742] dark:border-[#E94742] 
+           text-[#E94742] dark:text-[#E94742] font-semibold rounded-lg 
+           hover:bg-[#E94742]/10 dark:hover:bg-[#E94742]/20 transition-colors duration-300;
 }
 
 /* Cards */
@@ -70,7 +81,7 @@ h3 {
 .delay-300 { transition-delay: 300ms; }
 
 .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 
+    @apply bg-gradient-to-r from-[#E94742] to-[#F9CF42] dark:from-[#E94742] dark:to-[#F9CF42] 
            bg-clip-text text-transparent;
 }
 
@@ -83,7 +94,7 @@ h3 {
 /* Custom Utility */
 .badge {
     @apply inline-block px-3 py-1 text-sm font-medium rounded-full 
-           bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200;
+           bg-[#E94742]/10 dark:bg-[#E94742]/20 text-[#E94742] dark:text-[#E94742];
 }
 
 /* Print Styles */
@@ -112,4 +123,25 @@ h3 {
 
 ::-webkit-scrollbar-thumb {
     @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+}
+
+/* Dark Mode Fixes */
+[data-theme="dark"] {
+    @apply bg-gray-900 text-gray-200;
+}
+
+[data-theme="dark"] .bg-white {
+    @apply bg-gray-800;
+}
+
+[data-theme="dark"] .text-gray-800 {
+    @apply text-gray-200;
+}
+
+[data-theme="dark"] .border-gray-200 {
+    @apply border-gray-700;
+}
+
+[data-theme="dark"] .shadow-lg {
+    @apply shadow-gray-900/50;
 }
