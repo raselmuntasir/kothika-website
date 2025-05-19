@@ -25,11 +25,17 @@
 }
 
 .course-card-image {
-    @apply w-full h-48 object-cover relative;
+    @apply h-48;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-card-image {
+    @apply transform scale-105;
 }
 
 .course-category-badge {
-    @apply absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded;
+    @apply absolute top-4 right-4 bg-blue-600 text-white text-xs px-3 py-1.5 rounded-full;
+    transition: transform 0.2s ease;
 }
 
 .course-card-body {
@@ -45,11 +51,11 @@
 }
 
 .course-rating {
-    @apply flex items-center mb-2;
+    @apply flex items-center mb-3 gap-1.5;
 }
 
 .course-stars {
-    @apply text-yellow-500 mr-1;
+    @apply text-yellow-500 flex gap-0.5;
 }
 
 .course-rating-value {
@@ -69,7 +75,8 @@
 }
 
 .enroll-btn {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition;
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm transition-all;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
 /* Loading State */
@@ -78,9 +85,35 @@
 }
 
 .loading-spinner {
-    @apply inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-2;
+    @apply border-t-2 border-b-2;
 }
 
 .loading-text {
     @apply text-gray-600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .filter-options {
+        @apply flex-col;
+    }
+    
+    .filter-select {
+        @apply w-full;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .course-card {
+        @apply bg-gray-800 border-gray-700;
+    }
+    
+    .course-title {
+        @apply text-gray-100;
+    }
+    
+    .course-instructor {
+        @apply text-gray-400;
+    }
 }

@@ -1,12 +1,46 @@
 <!DOCTYPE html>
-<html lang="bn" data-theme="light">
+<!DOCTYPE html>
+<html lang="bn" dir="ltr" data-theme="light" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="কাঠিকা - বাংলাদেশের শীর্ষস্থানীয় ডিজিটাল মার্কেটিং এজেন্সি ও প্রশিক্ষণ কেন্দ্র">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="কাঠিকা - ডিজিটাল মার্কেটিং এজেন্সি">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    
     <title>কাঠিকা - ডিজিটাল মার্কেটিং এজেন্সি</title>
+    
+    <!-- ফন্ট অপ্টিমাইজেশন -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- প্রি-লোড গুরুত্বপূর্ণ রিসোর্স -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- টেইলউইন্ড সিএসএস -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- লুসাইড আইকন -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "কাঠিকা",
+        "image": "https://example.com/logo.png",
+        "telephone": "+88017XXXXXXXX",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "১২৩/বি, বিজনেস স্ট্রিট",
+            "addressLocality": "ঢাকা",
+            "addressCountry": "বাংলাদেশ"
+        }
+    }
+    </script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -16,9 +50,13 @@
                         'bangla': ['Hind Siliguri', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#181E38',
-                        secondary: '#F9CF42',
-                        accent: '#E94742',
+                        primary: '#181E38',    // লোগোর ডার্ক ব্লু কালার
+                        secondary: '#F9CF42',  // লোগোর হলুদ কালার
+                        accent: '#E94742',     // লোগোর রেড কালার
+                        dark: {
+                            primary: '#0F172A',  // ডার্ক মোড প্রাইমারী
+                            secondary: '#F59E0B' // ডার্ক মোড সেকেন্ডারী
+                        }
                     }
                 }
             }
@@ -27,9 +65,6 @@
     <style>
         .bg-gradient-kothika {
             background: linear-gradient(45deg, #F9CF42, #E94742);
-        }
-        .header-dark {
-            background-color: #181E38;
         }
         .tooltip {
             visibility: hidden;
@@ -43,8 +78,11 @@
     </style>
 </head>
 <body class="font-bangla bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+    <!-- স্কিপ নেভিগেশন লিংক -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">মূল কন্টেন্টে যান</a>
+
     <!-- হেডার -->
-    <header class="header-dark shadow-lg sticky top-0 z-50">
+    <header class="bg-primary dark:bg-gray-900">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- লোগো -->
             <div class="flex items-center">
@@ -135,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- হিরো সেকশন -->
         <section class="hero bg-gradient-kothika text-white py-20">
             <div class="container mx-auto px-4 text-center">
@@ -153,9 +191,9 @@
         </section>
 
         <!-- সেবা সমূহ -->
-        <section class="py-16 bg-white dark:bg-gray-700">
+        <section class="py-16 bg-white dark:bg-gray-700" aria-labelledby="services-heading">
             <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">আমাদের সেবাসমূহ</h2>
+                <h2 id="services-heading" class="text-2xl md:text-3xl font-bold text-center mb-12">আমাদের সেবাসমূহ</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- সেবা ১ -->
                     <div class="bg-gray-50 dark:bg-gray-600 p-6 rounded-lg shadow-md hover:shadow-lg transition">
@@ -188,10 +226,10 @@
         </section>
 
         <!-- কোর্স সেকশন -->
-        <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <section class="py-16 bg-gray-100 dark:bg-gray-800" aria-labelledby="courses-heading">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold">জনপ্রিয় কোর্সসমূহ</h2>
+                    <h2 id="courses-heading" class="text-2xl md:text-3xl font-bold">জনপ্রিয় কোর্সসমূহ</h2>
                     <a href="courses.html" class="text-accent hover:underline flex items-center">
                         সব দেখুন <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </a>
@@ -199,7 +237,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- কোর্স ১ -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="assets/images/course1.jpg" alt="SEO Course" class="w-full h-48 object-cover">
+                        <img src="assets/images/course1.jpg" alt="SEO Course" loading="lazy" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-bold">এসইও মাস্টারি কোর্স</h3>
@@ -218,7 +256,7 @@
                     
                     <!-- কোর্স ২ -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="assets/images/course2.jpg" alt="Social Media Course" class="w-full h-48 object-cover">
+                        <img src="assets/images/course2.jpg" alt="Social Media Course" loading="lazy" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-bold">সোশ্যাল মিডিয়া মার্কেটিং</h3>
@@ -237,7 +275,7 @@
                     
                     <!-- কোর্স ৩ -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="assets/images/course3.jpg" alt="Content Marketing" class="w-full h-48 object-cover">
+                        <img src="assets/images/course3.jpg" alt="Content Marketing" loading="lazy" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-bold">কন্টেন্ট মার্কেটিং</h3>
@@ -258,13 +296,13 @@
         </section>
 
         <!-- টেস্টিমোনিয়াল -->
-        <section class="py-16 bg-white dark:bg-gray-700">
+        <section class="py-16 bg-white dark:bg-gray-700" aria-labelledby="testimonials-heading">
             <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">ক্লায়েন্ট প্রতিক্রিয়া</h2>
+                <h2 id="testimonials-heading" class="text-2xl md:text-3xl font-bold text-center mb-12">ক্লায়েন্ট প্রতিক্রিয়া</h2>
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-gray-50 dark:bg-gray-600 rounded-xl shadow-md p-8">
                         <div class="flex items-center mb-6">
-                            <img src="assets/images/client1.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                            <img src="assets/images/client1.jpg" alt="Client" loading="lazy" class="w-12 h-12 rounded-full mr-4">
                             <div>
                                 <h4 class="font-bold">আহমেদ রাফি</h4>
                                 <p class="text-gray-600 dark:text-gray-300 text-sm">ই-কমার্স ব্যবসায়ী</p>
@@ -286,9 +324,9 @@
         </section>
 
         <!-- সিটি টু অ্যাকশন -->
-        <section class="py-16 bg-gradient-kothika text-white">
+        <section class="py-16 bg-gradient-kothika text-white" aria-labelledby="cta-heading">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6">আপনার ব্যবসাকে ডিজিটালে নিয়ে আসতে প্রস্তুত?</h2>
+                <h2 id="cta-heading" class="text-2xl md:text-3xl font-bold mb-6">আপনার ব্যবসাকে ডিজিটালে নিয়ে আসতে প্রস্তুত?</h2>
                 <p class="mb-8 max-w-2xl mx-auto">আমাদের বিশেষজ্ঞ দলের সাথে পরামর্শ করুন এবং আপনার ব্যবসার জন্য সঠিক ডিজিটাল মার্কেটিং স্ট্র্যাটেজি নির্ধারণ করুন।</p>
                 <a href="contact.html" class="inline-block bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
                     ফ্রী কনসাল্টেশন বুক করুন
@@ -298,7 +336,7 @@
     </main>
 
     <!-- ফুটার -->
-    <footer class="bg-primary text-white pt-12 pb-6">
+    <footer class="bg-primary dark:bg-gray-900 text-white pt-12 pb-6" aria-labelledby="footer-heading">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <!-- কোম্পানি তথ্য -->
@@ -367,6 +405,8 @@
         </div>
     </footer>
 
+    <!-- এক্সটার্নাল জাভাস্ক্রিপ্ট -->
+    <script src="assets/js/main.js"></script>
     <script>
         // Lucide আইকন ইনিশিয়ালাইজ
         lucide.createIcons();
@@ -388,51 +428,87 @@
 
         // থিম টগল ফাংশন (ডেস্কটপ)
         const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', function() {
-            toggleTheme();
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                toggleTheme();
+            });
+        }
 
         // থিম টগল ফাংশন (মোবাইল)
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-        mobileThemeToggle.addEventListener('click', function() {
-            toggleTheme();
-        });
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', function() {
+                toggleTheme();
+            });
+        }
+        
 
         function toggleTheme() {
             const html = document.documentElement;
-            const isDark = html.getAttribute('data-theme') === 'dark';
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            const isDark = html.classList.toggle('dark'); // Toggle 'dark' class on HTML element
+            html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
             
             // আইকন আপডেট
-            const icons = document.querySelectorAll('[data-lucide="sun"], [data-lucide="moon"]');
-            icons.forEach(icon => {
+             updateThemeIcons(isDark);
+        }
+
+        function updateThemeIcons(isDark) {
+            const sunIcons = document.querySelectorAll('[data-lucide="sun"]');
+            const moonIcons = document.querySelectorAll('[data-lucide="moon"]');
+
+            sunIcons.forEach(icon => {
                 if (isDark) {
-                    icon.classList.remove('hidden');
-                    icon.setAttribute('data-lucide', 'sun');
+                    icon.classList.add('hidden');
                 } else {
                     icon.classList.remove('hidden');
-                    icon.setAttribute('data-lucide', 'moon');
                 }
             });
-            lucide.createIcons();
-        }
 
-        // পেজ লোড時に থিম চেক
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        // টুলটিপ ফাংশন
-        document.querySelectorAll('.has-tooltip').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                const tooltip = this.querySelector('.tooltip');
-                tooltip.classList.remove('hidden');
+            moonIcons.forEach(icon => {
+                if (isDark) {
+                    icon.classList.remove('hidden');
+                } else {
+                    icon.classList.add('hidden');
+                }
             });
-            
-            item.addEventListener('mouseleave', function() {
-                const tooltip = this.querySelector('.tooltip');
-                tooltip.classList.add('hidden');
+        }
+
+        // পেজ লোড時に থিম চেক ও আইকন আপডেট
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            let initialThemeIsDark;
+
+            if (savedTheme) {
+                initialThemeIsDark = savedTheme === 'dark';
+            } else {
+                initialThemeIsDark = prefersDark;
+            }
+
+            if (initialThemeIsDark) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            updateThemeIcons(initialThemeIsDark);
+            lucide.createIcons(); // Ensure icons are rendered after theme check
+
+            // টুলটিপ ফাংশন
+            document.querySelectorAll('.has-tooltip').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    const tooltip = this.querySelector('.tooltip');
+                    if(tooltip) tooltip.style.visibility = 'visible';
+                    if(tooltip) tooltip.style.opacity = '1';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('.tooltip');
+                    if(tooltip) tooltip.style.visibility = 'hidden';
+                    if(tooltip) tooltip.style.opacity = '0';
+                });
             });
         });
     </script>

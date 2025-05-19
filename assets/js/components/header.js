@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const mobileMenu = document.getElementById('mobileMenu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('block');
+            document.body.classList.toggle('overflow-hidden');
             
             // Toggle icon between menu and x
             const menuIcon = mobileMenuButton.querySelector('.menu-icon');
@@ -45,6 +46,22 @@ document.addEventListener("DOMContentLoaded", function() {
         if (linkPage === currentPage) {
             link.classList.add('text-blue-600', 'font-semibold');
             link.classList.remove('text-gray-700');
+        }
+    });
+
+    // বাইরে ক্লিক করে মেনু বন্ধ
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    });
+
+    // স্ক্রিন সাইজ পরিবর্তনে মেনু বন্ধ
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
         }
     });
 });
