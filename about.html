@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://example.com/og-image.jpg">
     
-    <title>Kothika - About Us</title>
+    <title>কথিকা সম্পর্কে | বাংলাদেশের শীর্ষ অনলাইন লার্নিং প্ল্যাটফর্ম</title>
     
     <!-- ফ্যাভিকন -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -18,8 +18,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#E94742',
+                            light: '#F9CF42',
+                            dark: '#181E38'
+                        },
+                        accent: {
+                            DEFAULT: '#F9CF42',
+                            light: '#F9CF42',
+                            dark: '#E94742'
+                        },
+                        dark: '#181E38',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        'bangla': ['Hind Siliguri', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -15px rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: radial-gradient(#E9474210 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-bounce-slow {
+            animation: bounce 2.5s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #F9CF42, #E94742);
+        }
+        /* Dark mode styles */
+        .dark .hero-pattern {
+            background-image: radial-gradient(#F9CF4210 1px, transparent 1px);
+        }
+        .dark .gradient-text {
+            background-image: linear-gradient(90deg, #F9CF42, #E94742);
+        }
+        .dark .bg-white {
+            background-color: #181E38;
+        }
+        .dark .text-gray-600 {
+            color: #E5E7EB;
+        }
+        .dark .text-gray-800 {
+            color: #F9FAFB;
+        }
+        .dark .bg-gray-50 {
+            background-color: #1F2937;
+        }
+        .dark .bg-gray-100 {
+            background-color: #374151;
+        }
+        .dark .border-gray-100 {
+            border-color: #374151;
+        }
+    </style>
 </head>
-<body class="font-bangla bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+<body class="font-bangla bg-light text-gray-800 dark:bg-dark dark:text-light transition-colors duration-200">
     <!-- স্কিপ নেভিগেশন লিংক -->
     <a href="#main-content" class="skip-link sr-only focus:not-sr-only">মূল কন্টেন্টে যান</a>
 
@@ -28,145 +109,482 @@
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">আমাদের গল্প</h1>
-                <p class="text-xl max-w-3xl mx-auto">শিক্ষার মাধ্যমে দক্ষতা উন্নয়নে আমাদের যাত্রা</p>
+        <section class="py-16 md:py-20 hero-pattern relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/80 to-white dark:from-dark/80 dark:to-dark"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text" style="line-height: 1.2;">কথিকার গল্প</h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" style="line-height: 1.5;">শিক্ষার আলো ছড়িয়ে দেওয়ার আমাদের অগ্রযাত্রা</p>
+                <div class="mt-6 flex justify-center gap-4">
+                    <a href="#mission" class="px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition shadow-md">আমাদের মিশন</a>
+                    <a href="#team" class="px-6 py-2.5 bg-white dark:bg-dark border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition shadow-sm">আমাদের টিম</a>
+                </div>
             </div>
         </section>
 
         <!-- About Content -->
-        <section class="py-16">
+        <section class="py-12 md:py-16 bg-white dark:bg-dark">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8 mb-12">
-                        <h2 class="text-2xl font-bold mb-6">কাঠিকা সম্পর্কে</h2>
-                        <div class="prose max-w-none">
-                            <p class="mb-4">
-                                কাঠিকা হলো বাংলাদেশের একটি অগ্রণী অনলাইন লার্নিং প্ল্যাটফর্ম যেখানে আপনি বিভিন্ন ধরনের প্রফেশনাল কোর্স করতে পারবেন। আমাদের লক্ষ্য হলো সবার জন্য সহজলভ্য ও মানসম্মত শিক্ষা নিশ্চিত করা।
-                            </p>
-                            <p class="mb-4">
-                                ২০২৩ সালে প্রতিষ্ঠিত হওয়ার পর থেকে আমরা হাজারো শিক্ষার্থীকে তাদের ক্যারিয়ার গঠনে সহায়তা করেছি। আমাদের বিশেষজ্ঞ ইনস্ট্রাক্টরদের গাইডেন্সে আপনি আপনার দক্ষতা উন্নয়ন করতে পারবেন।
-                            </p>
+                <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-6 md:p-8 h-full flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/20 blur-xl"></div>
+                            <div class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-accent/20 blur-xl"></div>
+                            <span class="text-8xl md:text-9xl animate-bounce-slow">📚</span>
                         </div>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                        <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="bg-blue-100 p-3 rounded-full text-blue-600">
-                                    <i data-lucide="target" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-xl font-bold">আমাদের মিশন</h3>
-                            </div>
-                            <p class="text-gray-700">
-                                ডিজিটাল শিক্ষার মাধ্যমে বাংলাদেশের তরুণদের দক্ষ করে গড়ে তোলা। আমরা বিশ্বাস করি যে সঠিক শিক্ষা ও প্রশিক্ষণ যে কাউকে তার স্বপ্নের ক্যারিয়ার গড়ে তুলতে সাহায্য করতে পারে।
-                            </p>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">কথিকার যাত্রা শুরু</h2>
+                        <div class="prose prose-lg text-gray-600 dark:text-gray-300">
+                            <p>২০২৩ সালে মাত্র ৫ জনের একটি ছোট্ট দল নিয়ে যাত্রা শুরু করেছিলাম কথিকা। আমাদের লক্ষ্য ছিল বাংলাদেশের প্রতিটি প্রান্তে মানসম্মত শিক্ষা পৌঁছে দেওয়া।</p>
+                            <p class="mt-4">প্রথম বছরে আমরা মাত্র ৩টি কোর্স অফার করতাম, আজ আমাদের কোর্স সংখ্যা ৫০+ এবং ১০,০০০+ শিক্ষার্থীকে প্রশিক্ষণ দিয়েছি।</p>
+                            <p class="mt-4">আমাদের বিশেষত্ব হলো বাস্তব জীবনে প্রয়োগযোগ্য দক্ষতা উন্নয়নের উপর ফোকাস করা। প্রতিটি কোর্স ডিজাইন করা হয়েছে শিল্পের চাহিদা অনুযায়ী।</p>
                         </div>
-                        <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="bg-blue-100 p-3 rounded-full text-blue-600">
-                                    <i data-lucide="eye" class="w-6 h-6"></i>
-                                </div>
-                                <h3 class="text-xl font-bold">আমাদের ভিশন</h3>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <div class="bg-primary/5 px-4 py-2 rounded-full border border-primary/10 flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-primary mr-2"></div>
+                                <span class="text-sm font-medium">১০,০০০+ শিক্ষার্থী</span>
                             </div>
-                            <p class="text-gray-700">
-                                ২০২৫ সালের মধ্যে বাংলাদেশের সবচেয়ে বড় অনলাইন লার্নিং প্ল্যাটফর্ম হিসেবে প্রতিষ্ঠিত হওয়া এবং লক্ষাধিক শিক্ষার্থীকে দক্ষতা উন্নয়নে সহায়তা করা।
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Stats Section -->
-                    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8 mb-12">
-                        <h2 class="text-2xl font-bold mb-8 text-center">আমাদের অর্জন</h2>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                                <div class="text-gray-600">কোর্স</div>
+                            <div class="bg-accent/5 px-4 py-2 rounded-full border border-accent/10 flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-accent mr-2"></div>
+                                <span class="text-sm font-medium">৫০+ প্রফেশনাল কোর্স</span>
                             </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-blue-600 mb-2">10K+</div>
-                                <div class="text-gray-600">শিক্ষার্থী</div>
+                            <div class="bg-purple-500/5 px-4 py-2 rounded-full border border-purple-500/10 flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-sm font-medium">১০০+ বিশেষজ্ঞ ইনস্ট্রাক্টর</span>
                             </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-blue-600 mb-2">100+</div>
-                                <div class="text-gray-600">ইনস্ট্রাক্টর</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-blue-600 mb-2">95%</div>
-                                <div class="text-gray-600">সন্তুষ্টি হার</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Section -->
-                    <div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
-                        <h2 class="text-2xl font-bold mb-8 text-center">আমাদের টিম</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <!-- Team Member 1 -->
-                            <div class="text-center">
-                                <img src="assets/images/instructors/instructor-rasel.jpg" alt="রাসেল আহমেদ" 
-                                    class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100">
-                                <h3 class="text-xl font-semibold">রাসেল আহমেদ</h3>
-                                <p class="text-gray-600 mb-2">প্রতিষ্ঠাতা ও সিইও</p>
-                                <div class="flex justify-center gap-3">
-                                    <a href="#" class="text-gray-400 hover:text-blue-600">
-                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400">
-                                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Team Member 2 -->
-                            <div class="text-center">
-                                <img src="assets/images/instructors/instructor-kamrul.jpg" alt="কামরুল হাসান" 
-                                    class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100">
-                                <h3 class="text-xl font-semibold">কামরুল হাসান</h3>
-                                <p class="text-gray-600 mb-2">শিক্ষা পরিচালক</p>
-                                <div class="flex justify-center gap-3">
-                                    <a href="#" class="text-gray-400 hover:text-blue-600">
-                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400">
-                                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Team Member 3 -->
-                            <div class="text-center">
-                                <img src="assets/images/instructors/instructor-barshan.jpg" alt="বারশন দেব" 
-                                    class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100">
-                                <h3 class="text-xl font-semibold">বারশন দেব</h3>
-                                <p class="text-gray-600 mb-2">প্রযুক্তি পরিচালক</p>
-                                <div class="flex justify-center gap-3">
-                                    <a href="#" class="text-gray-400 hover:text-blue-600">
-                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400">
-                                        <i data-lucide="twitter" class="w-5 h-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-info">
-                        <div class="flex items-center space-x-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-[#E94742]"></i>
-                            <a href="mailto:raselmoontasir@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">raselmoontasir@gmail.com</a>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-[#E94742]"></i>
-                            <a href="tel:+8801314147868" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">+880 1314 147868</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter -->
-        <div data-include="includes/newsletter.html"></div>
+        <!-- মিশন ও ভিশন -->
+        <section id="mission" class="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10 md:mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">আমাদের উদ্দেশ্য ও লক্ষ্য</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">শিক্ষার মাধ্যমে সমাজ পরিবর্তনের অঙ্গীকার</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                    <!-- মিশন -->
+                    <div class="bg-white dark:bg-dark p-6 md:p-8 rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-2xl mr-4">
+                                🎯
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">আমাদের মিশন</h3>
+                                <p class="text-gray-500 dark:text-gray-400">কেন আমরা এই যাত্রা শুরু করেছি</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">ডিজিটাল শিক্ষার মাধ্যমে বাংলাদেশের তরুণদের দক্ষ করে গড়ে তোলা। আমরা বিশ্বাস করি যে সঠিক শিক্ষা ও প্রশিক্ষণ যে কাউকে তার স্বপ্নের ক্যারিয়ার গড়ে তুলতে সাহায্য করতে পারে। কথিকার প্রতিটি কোর্স ডিজাইন করা হয়েছে বাস্তব জীবনের চাহিদা মাথায় রেখে, যাতে শিক্ষার্থীরা শুধু সার্টিফিকেট নয়, বাস্তব দক্ষতা অর্জন করতে পারে।</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <h4 class="font-bold mb-2">মিশন স্টেটমেন্ট:</h4>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>সাশ্রয়ী মূল্যে মানসম্মত শিক্ষা প্রদান</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>বাস্তব জীবনে প্রয়োগযোগ্য দক্ষতা উন্নয়ন</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>ডিজিটাল শিক্ষাকে সকলের জন্য সহজলভ্য করা</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ভিশন -->
+                    <div class="bg-white dark:bg-dark p-6 md:p-8 rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center text-2xl mr-4">
+                                👁️
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">আমাদের ভিশন</h3>
+                                <p class="text-gray-500 dark:text-gray-400">আমরা কোথায় যেতে চাই</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">২০২৫ সালের মধ্যে বাংলাদেশের সবচেয়ে বিশ্বস্ত অনলাইন লার্নিং প্ল্যাটফর্ম হিসেবে প্রতিষ্ঠিত হওয়া এবং লক্ষাধিক শিক্ষার্থীকে দক্ষতা উন্নয়নে সহায়তা করা। আমরা চাই কথিকা হোক জ্ঞান অন্বেষণের প্রথম পছন্দ এবং বাংলাদেশের ডিজিটাল শিক্ষার ক্ষেত্রে একটি রোল মডেল। আমাদের লক্ষ্য শুধু কোর্স বিক্রি করা নয়, বরং শিক্ষার্থীদের ক্যারিয়ার গঠনে সহায়তা করা।</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <h4 class="font-bold mb-2">ভিশন স্টেটমেন্ট:</h4>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>২০২৫ সালের মধ্যে ১ লক্ষ শিক্ষার্থীকে প্রশিক্ষণ</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>দেশের শীর্ষ ৩টি অনলাইন লার্নিং প্ল্যাটফর্মের একটি হওয়া</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>শিক্ষার্থীদের জন্য ১০০% জব প্লেসমেন্ট সহায়তা</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- আমাদের অর্জন -->
+        <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">কথিকার অর্জন</h2>
+                    <p class="text-xl opacity-90 max-w-3xl mx-auto">গর্বিত মুহূর্তগুলো যা আমাদের অনুপ্রাণিত করে</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white/10 p-6 rounded-xl text-center backdrop-blur-sm border border-white/10 hover:border-white/20 transition">
+                        <div class="text-4xl font-bold mb-2">50+</div>
+                        <div class="opacity-90">প্রফেশনাল কোর্স</div>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-xl text-center backdrop-blur-sm border border-white/10 hover:border-white/20 transition">
+                        <div class="text-4xl font-bold mb-2">10K+</div>
+                        <div class="opacity-90">সন্তুষ্ট শিক্ষার্থী</div>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-xl text-center backdrop-blur-sm border border-white/10 hover:border-white/20 transition">
+                        <div class="text-4xl font-bold mb-2">100+</div>
+                        <div class="opacity-90">বিশেষজ্ঞ ইনস্ট্রাক্টর</div>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-xl text-center backdrop-blur-sm border border-white/10 hover:border-white/20 transition">
+                        <div class="text-4xl font-bold mb-2">95%</div>
+                        <div class="opacity-90">সন্তুষ্টি হার</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- বিশেষ সুবিধাসমূহ -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">কথিকার বিশেষ সুবিধাসমূহ</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">কেন কথিকা বেছে নিবেন?</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            🎓
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">প্রজেক্ট ভিত্তিক শিখুন</h3>
+                        <p class="text-gray-600">রিয়েল ওয়ার্ল্ড প্রজেক্টের মাধ্যমে হাতে-কলমে শেখার সুযোগ যা আপনার পোর্টফোলিও সমৃদ্ধ করবে</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            💼
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ক্যারিয়ার গাইডেন্স</h3>
+                        <p class="text-gray-600">কোর্স শেষে ক্যারিয়ার কাউন্সেলিং ও জব প্লেসমেন্ট সহায়তা প্রদান</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            📱
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">মোবাইল অ্যাপ</h3>
+                        <p class="text-gray-600">যেকোনো সময়, যেকোনো স্থান থেকে শেখার জন্য ডেডিকেটেড মোবাইল অ্যাপ</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            👨‍👩‍👧‍👦
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">এক্সক্লুসিভ কমিউনিটি</h3>
+                        <p class="text-gray-600">কোর্স শিক্ষার্থীদের জন্য বিশেষ ফেসবুক গ্রুপ ও ফোরামে এক্সপার্ট সাপোর্ট</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            🏆
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">আন্তর্জাতিক সার্টিফিকেট</h3>
+                        <p class="text-gray-600">কোর্স সম্পন্নে পাবেন আন্তর্জাতিক মানের সার্টিফিকেট ও ডিজিটাল ব্যাজ</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-soft transition">
+                        <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            🎥
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">লাইভ সাপোর্ট</h3>
+                        <p class="text-gray-600">সপ্তাহে ২টি লাইভ ক্লাস ও ২৪/৭ প্রশ্নোত্তরের সুবিধা</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- শিক্ষার্থীদের রিভিউ -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">শিক্ষার্থীদের কথা</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">কথিকা কীভাবে জীবন বদলে দিয়েছে</p>
+                    <div class="mt-4 flex justify-center items-center">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 font-medium">৪.৯/৫ (৪,৫০০+ রিভিউ)</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-2xl mr-4">
+                                👩
+                            </div>
+                            <div>
+                                <h4 class="font-bold">আরিফা ইসলাম</h4>
+                                <p class="text-gray-500 text-sm">ডিজিটাল মার্কেটিং কোর্স</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"কথিকার কোর্স আমার ক্যারিয়ার বদলে দিয়েছে। ৬ মাসের মধ্যে আমি ফ্রিল্যান্সিং করে ৫০,০০০ টাকা আয় করেছি। ইনস্ট্রাক্টরদের ধৈর্য্য এবং কোর্স ম্যাটেরিয়ালের গুণগত মান অসাধারণ ছিল।"</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-2xl mr-4">
+                                👨
+                            </div>
+                            <div>
+                                <h4 class="font-bold">রাকিব হাসান</h4>
+                                <p class="text-gray-500 text-sm">ওয়েব ডেভেলপমেন্ট কোর্স</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"কথিকার ওয়েব ডেভেলপমেন্ট কোর্স সম্পন্ন করার পর আমি একটি সফটওয়্যার কোম্পানিতে জব পেয়েছি। প্রজেক্ট বেসড লার্নিং সিস্টেম আমার জন্য খুবই উপকারী হয়েছে।"</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-2xl mr-4">
+                                👩‍💼
+                            </div>
+                            <div>
+                                <h4 class="font-bold">তানজিনা আক্তার</h4>
+                                <p class="text-gray-500 text-sm">গ্রাফিক ডিজাইন কোর্স</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 italic">"আমি শূন্য থেকে গ্রাফিক ডিজাইন শিখেছি কথিকায়। এখন আমি ফ্রিল্যান্সিং প্লাটফর্মে কাজ করছি এবং মাসে গড়ে ৩০,০০০ টাকা আয় করছি। ধন্যবাদ কথিকা টিম!"</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button class="px-6 py-2.5 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition">
+                        আরও রিভিউ দেখুন <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- আমাদের টিম -->
+        <section id="team" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">কথিকা পরিবার</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">যারা কথিকাকে এগিয়ে নিচ্ছেন</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- টিম মেম্বার ১ -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-40 h-40 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center text-5xl">
+                            👨‍💼
+                        </div>
+                        <h3 class="text-xl font-bold">রাসেল আহমেদ</h3>
+                        <p class="text-primary font-medium mb-2">প্রতিষ্ঠাতা ও সিইও</p>
+                        <p class="text-gray-600 text-sm mb-4">১০+ বছর অভিজ্ঞতা নিয়ে ডিজিটাল এডুকেশন সেক্টরে কাজ করছেন</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- টিম মেম্বার ২ -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-40 h-40 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center text-5xl">
+                            👩‍🏫
+                        </div>
+                        <h3 class="text-xl font-bold">কামরুল হাসান</h3>
+                        <p class="text-primary font-medium mb-2">শিক্ষা পরিচালক</p>
+                        <p class="text-gray-600 text-sm mb-4">কারিকুলাম ডেভেলপমেন্টে ৮+ বছর অভিজ্ঞতা</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- টিম মেম্বার ৩ -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-40 h-40 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center text-5xl">
+                            👨‍💻
+                        </div>
+                        <h3 class="text-xl font-bold">বারশন দেব</h3>
+                        <p class="text-primary font-medium mb-2">প্রযুক্তি পরিচালক</p>
+                        <p class="text-gray-600 text-sm mb-4">টেকনোলজি ইনফ্রাস্ট্রাকচার ডিজাইন ও ম্যানেজমেন্ট</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- টিম মেম্বার ৪ -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-40 h-40 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center text-5xl">
+                            👩‍🎨
+                        </div>
+                        <h3 class="text-xl font-bold">তাসনিমা আহমেদ</h3>
+                        <p class="text-primary font-medium mb-2">ক্রিয়েটিভ ডিরেক্টর</p>
+                        <p class="text-gray-600 text-sm mb-4">ডিজাইন ও ব্র্যান্ডিং বিশেষজ্ঞ</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- শেয়ার করে সাপোর্ট করুন -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 bg-gradient-to-br from-primary to-accent p-8 md:p-12 text-white flex items-center">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-4">শেয়ার করে সাপোর্ট করুন</h2>
+                                <p class="text-lg opacity-90 mb-6">আপনার বন্ধুদের সাথে কথিকা শেয়ার করুন এবং আমাদের কমিউনিটি বড় করতে সাহায্য করুন</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <button class="px-5 py-2.5 bg-white text-primary rounded-lg font-medium hover:bg-opacity-90 transition flex items-center">
+                                        <i class="fab fa-facebook-f mr-2"></i> ফেসবুক
+                                    </button>
+                                    <button class="px-5 py-2.5 bg-white text-primary rounded-lg font-medium hover:bg-opacity-90 transition flex items-center">
+                                        <i class="fab fa-whatsapp mr-2"></i> হোয়াটসঅ্যাপ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-8 md:p-12 flex items-center">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">কথিকা কমিউনিটিতে যুক্ত হোন</h3>
+                                <p class="text-gray-600 mb-6">আমাদের ফেসবুক গ্রুপে জয়েন করুন যেখানে হাজারো শিক্ষার্থী একসাথে শিখছে এবং প্রশ্ন করছে</p>
+                                <button class="px-5 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition flex items-center">
+                                    <i class="fab fa-facebook mr-2"></i> গ্রুপে জয়েন করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- যোগাযোগ -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm">
+                    <h2 class="text-3xl font-bold mb-2 text-center">আমাদের সাথে যোগাযোগ করুন</h2>
+                    <p class="text-gray-600 text-center mb-8">আপনার কোন প্রশ্ন বা পরামর্শ থাকলে আমাদের জানান</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl hover:shadow-sm transition">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">ইমেইল</h4>
+                                    <a href="mailto:info@kothika.com" class="text-gray-600 hover:text-primary transition">info@kothika.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-xl hover:shadow-sm transition">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">ফোন</h4>
+                                    <a href="tel:+8801314147868" class="text-gray-600 hover:text-primary transition">+880 1314 147868</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-xl hover:shadow-sm transition">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">অফিস</h4>
+                                    <p class="text-gray-600">ধানমন্ডি, ঢাকা, বাংলাদেশ</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-xl hover:shadow-sm transition">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">কর্মঘণ্টা</h4>
+                                    <p class="text-gray-600">শনি-বৃহস্পতি, সকাল ৯টা - সন্ধ্যা ৬টা</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div data-include="includes/footer.html"></div>
@@ -176,6 +594,23 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
     </script>
 </body>
 </html>
