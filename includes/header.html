@@ -88,39 +88,82 @@
 
                 <!-- ইউজার প্রোফাইল ড্রপডাউন -->
                 <div class="hidden md:block relative">
-                    <button id="userMenuBtn" class="flex items-center gap-1 focus:outline-none rounded-lg p-1">
-                        <img 
-                            src="assets/images/user-default.png" 
-                            alt="User" 
-                            class="w-8 h-8 rounded-full border-2 border-gray-600 hover:border-[#E94742] transition-colors"
-                        />
+                    <button id="userMenuBtn" class="flex items-center gap-1 focus:outline-none rounded-lg p-1 group">
+                        <div class="relative">
+                            <!-- লগআউট অবস্থায় ম্যান আইকন -->
+                            <div id="defaultUserIcon" class="w-10 h-10 rounded-full border-2 border-gray-600 group-hover:border-[#E94742] transition-colors bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+                                <i data-lucide="user-circle" class="w-6 h-6 text-gray-300"></i>
+                            </div>
+                            <!-- লগইন অবস্থায় প্রোফাইল পিকচার -->
+                            <img 
+                                id="userProfileImage"
+                                src="assets/images/user-default.png" 
+                                alt="User" 
+                                class="w-10 h-10 rounded-full border-2 border-gray-600 group-hover:border-[#E94742] transition-colors hidden"
+                            />
+                            <div class="absolute -bottom-1 -right-1 bg-[#E94742] rounded-full p-0.5">
+                                <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-white"></i>
+                            </div>
+                        </div>
                     </button>
                     
                     <!-- ড্রপডাউন মেনু -->
-                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
-                        <div class="px-4 py-2 border-b border-gray-700">
-                            <p class="text-sm font-medium text-gray-300">ডার্ক মোড</p>
-                            <button id="themeToggle" class="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-lg">
+                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-56 bg-gray-800 rounded-md shadow-lg py-1 z-50 border border-gray-700">
+                        <!-- লগইন না থাকলে -->
+                        <div id="notLoggedIn" class="px-5 py-4 border-b border-gray-700">
+                            <p class="text-base text-gray-300 mb-3">আপনি লগইন করেননি</p>
+                            <div class="space-y-3">
+                                <a href="#" class="block w-full px-4 py-2.5 text-base text-center text-gray-300 border border-gray-600 rounded hover:bg-gray-700 transition">
+                                    লগইন
+                                </a>
+                                <a href="#" class="block w-full px-4 py-2.5 text-base text-center text-white bg-[#E94742] rounded hover:bg-[#d13a36] transition">
+                                    নিবন্ধন
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- লগইন থাকলে -->
+                        <div id="loggedIn" class="hidden">
+                            <div class="px-5 py-4 border-b border-gray-700">
+                                <div class="flex items-center gap-4">
+                                    <img 
+                                        id="loggedInProfileImage"
+                                        src="assets/images/user-default.png" 
+                                        alt="User" 
+                                        class="w-12 h-12 rounded-full border-2 border-gray-600"
+                                    />
+                                    <div>
+                                        <p class="text-base font-medium text-gray-200">ইউজার নাম</p>
+                                        <p class="text-sm text-gray-400">user@email.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                                <i data-lucide="user" class="w-5 h-5 mr-2 inline"></i> প্রোফাইল
+                            </a>
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                                <i data-lucide="bookmark" class="w-5 h-5 mr-2 inline"></i> সেভ করা
+                            </a>
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                                <i data-lucide="bell" class="w-5 h-5 mr-2 inline"></i> নোটিফিকেশন
+                            </a>
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                                <i data-lucide="settings" class="w-5 h-5 mr-2 inline"></i> সেটিংস
+                            </a>
+                            <a href="#" class="block px-5 py-2.5 text-base text-red-400 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                                <i data-lucide="log-out" class="w-5 h-5 mr-2 inline"></i> লগআউট
+                            </a>
+                        </div>
+
+                        <!-- ডার্ক মোড টগল -->
+                        <div class="px-5 py-3 border-t border-gray-700">
+                            <p class="text-base font-medium text-gray-300 mb-2">ডার্ক মোড</p>
+                            <button id="themeToggle" class="flex items-center space-x-2 w-full px-4 py-2.5 text-base text-gray-300 hover:bg-gray-700 focus:outline-none rounded-lg">
                                 <i data-lucide="sun" class="w-5 h-5"></i>
                                 <i data-lucide="moon" class="w-5 h-5 hidden"></i>
                                 <span>ডার্ক মোড</span>
                             </button>
                         </div>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
-                            <i data-lucide="user" class="w-4 h-4 mr-2 inline"></i> প্রোফাইল
-                        </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
-                            <i data-lucide="bookmark" class="w-4 h-4 mr-2 inline"></i> সেভ করা
-                        </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
-                            <i data-lucide="bell" class="w-4 h-4 mr-2 inline"></i> নোটিফিকেশন
-                        </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
-                            <i data-lucide="settings" class="w-4 h-4 mr-2 inline"></i> সেটিংস
-                        </a>
-                        <a href="#" class="block px-4 py-2 text-sm text-red-400 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
-                            <i data-lucide="log-out" class="w-4 h-4 mr-2 inline"></i> লগআউট
-                        </a>
                     </div>
                 </div>
             </div>

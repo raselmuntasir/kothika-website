@@ -155,6 +155,7 @@ function initializeHeaderMenu() {
             searchResults?.classList.add('hidden');
             mobileSearchResults?.classList.add('hidden');
         }
+
     }
 
     // Add search event listeners
@@ -228,23 +229,104 @@ function initializeHeaderMenu() {
         });
     }
 
-    // User menu toggle
-    const userMenuBtn = document.getElementById('userMenuBtn');
-    const userMenu = document.getElementById('userMenu');
+    // User menu functionality
+    function initializeUserMenu() {
+        const userMenuBtn = document.getElementById('userMenuBtn');
+        const userMenu = document.getElementById('userMenu');
+        const notLoggedIn = document.getElementById('notLoggedIn');
+        const loggedIn = document.getElementById('loggedIn');
+        const defaultUserIcon = document.getElementById('defaultUserIcon');
+        const userProfileImage = document.getElementById('userProfileImage');
+        const loggedInProfileImage = document.getElementById('loggedInProfileImage');
+        const userName = loggedIn?.querySelector('.text-gray-200');
+        const userEmail = loggedIn?.querySelector('.text-gray-400');
 
-    if (userMenuBtn && userMenu) {
-        userMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            userMenu.classList.toggle('hidden');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!userMenuBtn.contains(e.target) && !userMenu.contains(e.target)) {
-                userMenu.classList.add('hidden');
+        // Check if user is logged in
+        function checkLoginStatus() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                // Show profile image, hide default icon
+                if (defaultUserIcon) defaultUserIcon.classList.add('hidden');
+                if (userProfileImage) {
+                    userProfileImage.classList.remove('hidden');
+                    userProfileImage.src = user.profileImage || 'assets/images/user-default.png';
+                }
+                if (loggedInProfileImage) {
+                    loggedInProfileImage.src = user.profileImage || 'assets/images/user-default.png';
+                }
+                
+                // Update user info
+                if (userName) userName.textContent = user.name || 'ইউজার নাম';
+                if (userEmail) userEmail.textContent = user.email || 'user@email.com';
+                
+                // Show/hide appropriate sections
+                if (notLoggedIn) notLoggedIn.classList.add('hidden');
+                if (loggedIn) loggedIn.classList.remove('hidden');
+            } else {
+                // Show default icon, hide profile image
+                if (defaultUserIcon) defaultUserIcon.classList.remove('hidden');
+                if (userProfileImage) userProfileImage.classList.add('hidden');
+                
+                // Reset profile images
+                if (userProfileImage) userProfileImage.src = 'assets/images/user-default.png';
+                if (loggedInProfileImage) loggedInProfileImage.src = 'assets/images/user-default.png';
+                
+                // Show/hide appropriate sections
+                if (notLoggedIn) notLoggedIn.classList.remove('hidden');
+                if (loggedIn) loggedIn.classList.add('hidden');
             }
-        });
+        }
+
+        // Check login status on load
+        checkLoginStatus();
+
+        if (userMenuBtn && userMenu) {
+            userMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                userMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!userMenuBtn.contains(e.target) && !userMenu.contains(e.target)) {
+                    userMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Handle login/logout
+        const loginBtn = document.querySelector('#notLoggedIn a[href="#"]:first-child');
+        const registerBtn = document.querySelector('#notLoggedIn a[href="#"]:last-child');
+        const logoutBtn = document.querySelector('#loggedIn a[href="#"]:last-child');
+
+        if (loginBtn) {
+            loginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // TODO: Implement login functionality
+                console.log('Login clicked');
+            });
+        }
+
+        if (registerBtn) {
+            registerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // TODO: Implement register functionality
+                console.log('Register clicked');
+            });
+        }
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('user');
+                checkLoginStatus();
+                userMenu.classList.add('hidden');
+            });
+        }
     }
+
+    // Initialize user menu
+    initializeUserMenu();
 
     // Theme toggle functionality
     function setupThemeToggle(themeToggleBtn) {
@@ -252,6 +334,7 @@ function initializeHeaderMenu() {
 
         const sunIcon = themeToggleBtn.querySelector('[data-lucide="sun"]');
         const moonIcon = themeToggleBtn.querySelector('[data-lucide="moon"]');
+        const themeText = themeToggleBtn.querySelector('span');
 
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
@@ -270,9 +353,10 @@ function initializeHeaderMenu() {
         });
 
         function updateThemeIcons(isDark) {
-            if (sunIcon && moonIcon) {
+            if (sunIcon && moonIcon && themeText) {
                 sunIcon.classList.toggle('hidden', isDark);
                 moonIcon.classList.toggle('hidden', !isDark);
+                themeText.textContent = isDark ? 'লাইট মোড' : 'ডার্ক মোড';
             }
         }
     }
