@@ -14,7 +14,7 @@
 
             <!-- সার্চ বার -->
             <div class="hidden lg:flex items-center flex-1 max-w-sm mx-8">
-                <form id="searchForm" class="relative w-full" onsubmit="return handleSearch(event)">
+                <form id="searchForm" class="relative w-full">
                     <input 
                         type="text" 
                         id="searchInput"
@@ -25,6 +25,24 @@
                         <i data-lucide="search" class="w-5 h-5"></i>
                     </button>
                 </form>
+            </div>
+
+            <!-- সার্চ রেজাল্ট -->
+            <div id="searchResults" class="hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg mt-2 p-4 z-50">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">সার্চ রেজাল্ট</h3>
+                        <button id="closeSearchResults" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div id="searchResultsContent" class="space-y-4">
+                        <!-- সার্চ রেজাল্ট এখানে দেখাবে -->
+                    </div>
+                    <div id="noResults" class="hidden text-center py-8">
+                        <p class="text-gray-600 dark:text-gray-400">কোন ফলাফল পাওয়া যায়নি</p>
+                    </div>
+                </div>
             </div>
 
             <!-- ডেস্কটপ নেভিগেশন মেনু -->
@@ -121,7 +139,7 @@
                     
                     <!-- মোবাইল সার্চ -->
                     <div class="mb-6">
-                        <form id="mobileSearchForm" class="relative" onsubmit="return handleSearch(event)">
+                        <form id="mobileSearchForm" class="relative">
                             <input 
                                 type="text" 
                                 id="mobileSearchInput"
@@ -132,6 +150,22 @@
                                 <i data-lucide="search" class="w-5 h-5"></i>
                             </button>
                         </form>
+                    </div>
+
+                    <!-- মোবাইল সার্চ রেজাল্ট -->
+                    <div id="mobileSearchResults" class="hidden mt-4 bg-gray-800 rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold text-white">সার্চ রেজাল্ট</h3>
+                            <button id="closeMobileSearchResults" class="text-gray-400 hover:text-white">
+                                <i data-lucide="x" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <div id="mobileSearchResultsContent" class="space-y-4">
+                            <!-- সার্চ রেজাল্ট এখানে দেখাবে -->
+                        </div>
+                        <div id="mobileNoResults" class="hidden text-center py-8">
+                            <p class="text-gray-400">কোন ফলাফল পাওয়া যায়নি</p>
+                        </div>
                     </div>
 
                     <!-- মোবাইল নেভিগেশন -->
