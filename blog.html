@@ -17,93 +17,219 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: 'linear-gradient(45deg, #F9CF42, #E94742)',
+                            yellow: '#F9CF42',
+                            red: '#E94742',
+                            dark: '#181E38',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="font-bangla bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+<body class="font-bangla bg-white dark:bg-brand-dark text-gray-800 dark:text-gray-100">
     <!-- স্কিপ নেভিগেশন লিংক -->
     <a href="#main-content" class="skip-link sr-only focus:not-sr-only">মূল কন্টেন্টে যান</a>
 
     <!-- হেডার -->
     <div data-include="includes/header.html"></div>
 
-    <main id="main-content" class="py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold text-center mb-8">আমাদের ব্লগ</h1>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Blog Post 1 -->
-                <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                    <img src="https://via.placeholder.com/600x400?text=Blog+Post+1" alt="Blog Post 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-2">
-                            <span>ডিজিটাল মার্কেটিং</span>
-                            <span class="mx-2">•</span>
-                            <span>১০ মে, ২০২৫</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-3">ফেসবুক মার্কেটিং এর সম্পূর্ণ গাইড</h2>
-                        <p class="text-gray-600 mb-4">ফেসবুক মার্কেটিং এর মাধ্যমে কিভাবে আপনার ব্যবসাকে নতুন উচ্চতায় নিতে পারেন...</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">আরও পড়ুন</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                    <img src="https://via.placeholder.com/600x400?text=Blog+Post+2" alt="Blog Post 2" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-2">
-                            <span>গ্রাফিক ডিজাইন</span>
-                            <span class="mx-2">•</span>
-                            <span>২৫ এপ্রিল, ২০২৫</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-3">ফটোশপ শেখার জন্য প্রাথমিক গাইড</h2>
-                        <p class="text-gray-600 mb-4">ফটোশপ শেখা শুরু করতে চান? এখানে রয়েছে সম্পূর্ণ প্রাথমিক গাইড...</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">আরও পড়ুন</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                    <img src="https://via.placeholder.com/600x400?text=Blog+Post+3" alt="Blog Post 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-2">
-                            <span>ক্যারিয়ার</span>
-                            <span class="mx-2">•</span>
-                            <span>১২ এপ্রিল, ২০২৫</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-3">ফ্রিল্যান্সিং শুরু করার সম্পূর্ণ গাইড</h2>
-                        <p class="text-gray-600 mb-4">ফ্রিল্যান্সিং শুরু করতে চান কিন্তু জানেন না কিভাবে শুরু করবেন? এই গাইডটি আপনার জন্য...</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">আরও পড়ুন</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                    <img src="https://via.placeholder.com/600x400?text=Blog+Post+4" alt="Blog Post 4" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-2">
-                            <span>ওয়েব ডেভেলপমেন্ট</span>
-                            <span class="mx-2">•</span>
-                            <span>২৮ মার্চ, ২০২৫</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-3">২০২৫ সালে শেখার জন্য সেরা প্রোগ্রামিং ভাষা</h2>
-                        <p class="text-gray-600 mb-4">২০২৫ সালে কোন প্রোগ্রামিং ভাষা শিখলে আপনার ক্যারিয়ার হবে উজ্জ্বল...</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">আরও পড়ুন</a>
-                    </div>
-                </article>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-brand-yellow to-brand-red py-24 md:py-32 text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">আমাদের ব্লগ</h1>
+                <p class="text-xl md:text-2xl max-w-2xl mx-auto opacity-90">ডিজিটাল মার্কেটিং এবং ক্যারিয়ার বিষয়ক সর্বশেষ আপডেট</p>
+                <div class="mt-8">
+                    <a href="#blog-posts" class="inline-flex items-center px-6 py-3 bg-white text-brand-red rounded-full font-medium hover:bg-opacity-90 transition duration-300 shadow-lg">
+                        ব্লগ পড়ুন
+                        <i data-lucide="arrow-down" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
+        </section>
 
-            <!-- Pagination -->
-            <div class="mt-12 flex justify-center">
-                <nav class="flex items-center gap-1">
-                    <a href="#" class="px-3 py-1 border rounded-lg text-gray-600 hover:bg-gray-100">পূর্ববর্তী</a>
-                    <a href="#" class="px-3 py-1 border rounded-lg bg-blue-600 text-white">1</a>
-                    <a href="#" class="px-3 py-1 border rounded-lg text-gray-600 hover:bg-gray-100">2</a>
-                    <a href="#" class="px-3 py-1 border rounded-lg text-gray-600 hover:bg-gray-100">3</a>
-                    <a href="#" class="px-3 py-1 border rounded-lg text-gray-600 hover:bg-gray-100">পরবর্তী</a>
-                </nav>
+        <!-- Blog Posts -->
+        <section id="blog-posts" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Categories Filter -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-12">
+                        <button onclick="filterPosts('all')" class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full font-medium shadow-sm hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition filter-btn active" data-category="all">সব ক্যাটাগরি</button>
+                        <button onclick="filterPosts('digital-marketing')" class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full font-medium shadow-sm hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition filter-btn" data-category="digital-marketing">ডিজিটাল মার্কেটিং</button>
+                        <button onclick="filterPosts('graphic-design')" class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full font-medium shadow-sm hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition filter-btn" data-category="graphic-design">গ্রাফিক ডিজাইন</button>
+                        <button onclick="filterPosts('freelancing')" class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full font-medium shadow-sm hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition filter-btn" data-category="freelancing">ফ্রিল্যান্সিং</button>
+                        <button onclick="filterPosts('web-development')" class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full font-medium shadow-sm hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition filter-btn" data-category="web-development">ওয়েব ডেভেলপমেন্ট</button>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="blog-grid">
+                        <!-- Blog Post 1 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group blog-post" data-category="digital-marketing">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="ফেসবুক মার্কেটিং" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                    <span class="bg-brand-yellow text-white text-xs px-2 py-1 rounded">ডিজিটাল মার্কেটিং</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                                    <span>১০ মে, ২০২৫</span>
+                                    <span class="mx-2">•</span>
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                    <span>৫ মিনিট</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3 dark:text-white">ফেসবুক মার্কেটিং এর সম্পূর্ণ গাইড</h2>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">ফেসবুক মার্কেটিং এর মাধ্যমে কিভাবে আপনার ব্যবসাকে নতুন উচ্চতায় নিতে পারেন...</p>
+                                <a href="#" class="inline-flex items-center text-brand-red dark:text-brand-yellow hover:opacity-80 font-medium">
+                                    আরও পড়ুন
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group blog-post" data-category="graphic-design">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="ফটোশপ গাইড" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                    <span class="bg-brand-yellow text-white text-xs px-2 py-1 rounded">গ্রাফিক ডিজাইন</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                                    <span>২৫ এপ্রিল, ২০২৫</span>
+                                    <span class="mx-2">•</span>
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                    <span>৭ মিনিট</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3 dark:text-white">ফটোশপ শেখার জন্য প্রাথমিক গাইড</h2>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">ফটোশপ শেখা শুরু করতে চান? এখানে রয়েছে সম্পূর্ণ প্রাথমিক গাইড...</p>
+                                <a href="#" class="inline-flex items-center text-brand-red dark:text-brand-yellow hover:opacity-80 font-medium">
+                                    আরও পড়ুন
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group blog-post" data-category="freelancing">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="ফ্রিল্যান্সিং গাইড" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                    <span class="bg-brand-yellow text-white text-xs px-2 py-1 rounded">ক্যারিয়ার</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                                    <span>১২ এপ্রিল, ২০২৫</span>
+                                    <span class="mx-2">•</span>
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                    <span>১০ মিনিট</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3 dark:text-white">ফ্রিল্যান্সিং শুরু করার সম্পূর্ণ গাইড</h2>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">ফ্রিল্যান্সিং শুরু করতে চান কিন্তু জানেন না কিভাবে শুরু করবেন?</p>
+                                <a href="#" class="inline-flex items-center text-brand-red dark:text-brand-yellow hover:opacity-80 font-medium">
+                                    আরও পড়ুন
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group blog-post" data-category="web-development">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="প্রোগ্রামিং ভাষা" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                    <span class="bg-brand-yellow text-white text-xs px-2 py-1 rounded">ওয়েব ডেভেলপমেন্ট</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                                    <span>২৮ মার্চ, ২০২৫</span>
+                                    <span class="mx-2">•</span>
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                    <span>৮ মিনিট</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3 dark:text-white">২০২৫ সালে শেখার জন্য সেরা প্রোগ্রামিং ভাষা</h2>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">২০২৫ সালে কোন প্রোগ্রামিং ভাষা শিখলে আপনার ক্যারিয়ার হবে উজ্জ্বল...</p>
+                                <a href="#" class="inline-flex items-center text-brand-red dark:text-brand-yellow hover:opacity-80 font-medium">
+                                    আরও পড়ুন
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Additional Blog Posts (5-40) -->
+                        <!-- Blog Post 5 -->
+                        <article class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group blog-post" data-category="digital-marketing">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="ইনস্টাগ্রাম মার্কেটিং" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                    <span class="bg-brand-yellow text-white text-xs px-2 py-1 rounded">সোশ্যাল মিডিয়া</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                                    <span>১৫ মার্চ, ২০২৫</span>
+                                    <span class="mx-2">•</span>
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                    <span>৬ মিনিট</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3 dark:text-white">ইনস্টাগ্রাম মার্কেটিং এর সেরা কৌশল</h2>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">ইনস্টাগ্রামে কিভাবে আপনার ব্র্যান্ডের উপস্থিতি বাড়াবেন এবং বিক্রয় বৃদ্ধি করবেন...</p>
+                                <a href="#" class="inline-flex items-center text-brand-red dark:text-brand-yellow hover:opacity-80 font-medium">
+                                    আরও পড়ুন
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Continue adding more blog posts (6-40) with different categories -->
+                        <!-- ... Add more blog posts here ... -->
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-16 flex justify-center">
+                        <nav class="flex items-center gap-2">
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition flex items-center gap-1">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                পূর্ববর্তী
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-gradient-to-r from-brand-yellow to-brand-red text-white rounded-lg font-medium">1</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition">2</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition">3</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition">4</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition">5</a>
+                            <a href="#" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-brand-yellow hover:text-white dark:hover:bg-brand-red transition flex items-center gap-1">
+                                পরবর্তী
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Newsletter -->
+        <div data-include="includes/newsletter.html"></div>
     </main>
 
     <div data-include="includes/footer.html"></div>
@@ -112,6 +238,37 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Filter functionality
+        function filterPosts(category) {
+            const posts = document.querySelectorAll('.blog-post');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active', 'bg-brand-yellow', 'text-white');
+                } else {
+                    btn.classList.remove('active', 'bg-brand-yellow', 'text-white');
+                }
+            });
+
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        // Add smooth scroll for category buttons
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('blog-grid').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
     </script>
 </body>
 </html>
