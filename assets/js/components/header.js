@@ -363,23 +363,7 @@ function initializeHeaderMenu() {
 
     // Setup both desktop and mobile theme toggles
     setupThemeToggle(document.getElementById('themeToggle'));
-    setupThemeToggle(document.getElementById('mobileThemeToggle'));
-
-    // Sticky header
-    const header = document.querySelector('header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            header.classList.add('shadow-lg', 'bg-[#181E38]/95', 'backdrop-blur-sm');
-        } else {
-            header.classList.remove('shadow-lg', 'bg-[#181E38]/95', 'backdrop-blur-sm');
-        }
-        
-        lastScroll = currentScroll;
-    });
+    setupThemeToggle(document.getElementById('mobileThemeToggle'));    // Removed scroll event listener for fixed header style
 
     // Active link highlighting
     const currentPath = window.location.pathname;
