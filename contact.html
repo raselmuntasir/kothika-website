@@ -26,15 +26,21 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            yellow: '#F9CF42',
-                            red: '#E94742',
-                            dark: '#181E38',
-                        }
-                    },
                     fontFamily: {
                         'bangla': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#181E38',    // লোগোর ডার্ক ব্লু কালার
+                        secondary: {
+                            DEFAULT: '#F9CF42',  // লোগোর হলুদ কালার
+                            500: '#EAB308',     // সাবস্ক্রাইব বাটনের জন্য
+                            600: '#CA8A04'      // হোভার স্টেটের জন্য
+                        },
+                        accent: '#E94742',     // লোগোর রেড কালার
+                        dark: {
+                            primary: '#0F172A',  // ডার্ক মোড প্রাইমারী
+                            secondary: '#F59E0B' // ডার্ক মোড সেকেন্ডারী
+                        }
                     },
                     boxShadow: {
                         'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',

@@ -27,19 +27,25 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        'bangla': ['Hind Siliguri', 'sans-serif'],
+                    },
                     colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                        primary: '#181E38',    // লোগোর ডার্ক ব্লু কালার
+                        secondary: {
+                            DEFAULT: '#F9CF42',  // লোগোর হলুদ কালার
+                            500: '#EAB308',     // সাবস্ক্রাইব বাটনের জন্য
+                            600: '#CA8A04'      // হোভার স্টেটের জন্য
+                        },
+                        accent: '#E94742',     // লোগোর রেড কালার
+                        dark: {
+                            primary: '#0F172A',  // ডার্ক মোড প্রাইমারী
+                            secondary: '#F59E0B' // ডার্ক মোড সেকেন্ডারী
                         }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 24px rgba(0, 0, 0, 0.05)',
+                        'card': '0 8px 32px rgba(0, 0, 0, 0.08)'
                     }
                 }
             }
@@ -55,13 +61,16 @@
     <div data-include="includes/header.html"></div>
 
     <main id="main-content" class="py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- পেজ হেডার -->
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">আমাদের সকল কোর্স</h1>
-                <p class="text-lg text-gray-600 dark:text-gray-300">বিভিন্ন ক্যাটাগরির প্রফেশনাল কোর্স একসাথে</p>
+        <!-- পেজ হেডার -->
+        <section class="relative bg-gradient-to-r from-brand-yellow to-brand-red py-12 md:py-24 text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight">আমাদের সকল কোর্স</h1>
+                <p class="text-lg md:text-2xl max-w-2xl mx-auto opacity-90">বিভিন্ন ক্যাটাগরির প্রফেশনাল কোর্স একসাথে</p>
             </div>
+        </section>
 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- ফিল্টার সেকশন -->
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8 border border-gray-100 dark:border-gray-700">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -108,6 +117,7 @@
         </div>
     </main>
 
+    <!-- ফুটার -->
     <div data-include="includes/footer.html"></div>
     
     <!-- স্ক্রিপ্ট ফাইল -->

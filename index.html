@@ -55,7 +55,11 @@
                     },
                     colors: {
                         primary: '#181E38',    // লোগোর ডার্ক ব্লু কালার
-                        secondary: '#F9CF42',  // লোগোর হলুদ কালার
+                        secondary: {
+                            DEFAULT: '#F9CF42',  // লোগোর হলুদ কালার
+                            500: '#EAB308',     // সাবস্ক্রাইব বাটনের জন্য
+                            600: '#CA8A04'      // হোভার স্টেটের জন্য
+                        },
                         accent: '#E94742',     // লোগোর রেড কালার
                         dark: {
                             primary: '#0F172A',  // ডার্ক মোড প্রাইমারী
@@ -250,70 +254,7 @@
     </main>
 
     <!-- ফুটার -->
-    <footer class="bg-primary dark:bg-gray-900 text-white pt-12 pb-6" aria-labelledby="footer-heading">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- কোম্পানি তথ্য -->
-                <div>
-                    <img
-                        src="assets/images/kothika-logo.png"
-                        alt="Kothika Logo"
-                        class="h-10 w-auto"
-                    />
-                    <p class="mb-4">ডিজিটাল মার্কেটিং এজেন্সি</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="linkedin"></i></a>
-                        <a href="#" class="text-white hover:text-secondary"><i data-lucide="youtube"></i></a>
-                    </div>
-                </div>
-                
-                <!-- লিংকস -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">লিংকস</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="footer-link hover:text-secondary">হোম</a></li>
-                        <li><a href="courses.html" class="footer-link hover:text-secondary">কোর্স</a></li>
-                        <li><a href="blog.html" class="footer-link hover:text-secondary">ব্লগ</a></li>
-                        <li><a href="about.html" class="footer-link hover:text-secondary">আমাদের সম্পর্কে</a></li>
-                        <li><a href="contact.html" class="footer-link hover:text-secondary">যোগাযোগ</a></li>
-                    </ul>
-                </div>
-                
-                <!-- সেবা -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">সেবা</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="footer-link hover:text-secondary">এসইও সার্ভিস</a></li>
-                        <li><a href="#" class="footer-link hover:text-secondary">সোশ্যাল মিডিয়া মার্কেটিং</a></li>
-                        <li><a href="#" class="footer-link hover:text-secondary">কন্টেন্ট মার্কেটিং</a></li>
-                        <li><a href="#" class="footer-link hover:text-secondary">ওয়েব ডেভেলপমেন্ট</a></li>
-                        <li><a href="#" class="footer-link hover:text-secondary">গ্রাফিক্স ডিজাইন</a></li>
-                    </ul>
-                </div>
-                
-                <!-- যোগাযোগ -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">যোগাযোগ</h3>
-                    <div class="contact-info">
-                        <div class="flex items-center space-x-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-[#E94742]"></i>
-                            <a href="mailto:raselmoontasir@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">raselmoontasir@gmail.com</a>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-[#E94742]"></i>
-                            <a href="tel:+8801314147868" class="text-gray-600 dark:text-gray-400 hover:text-[#E94742] dark:hover:text-[#E94742]">+880 1314 147868</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 pt-6 text-center">
-                <p>&copy; ২০২৩ কাঠিকা. সকল অধিকার সংরক্ষিত</p>
-            </div>
-        </div>
-    </footer>
+    <div data-include="includes/footer.html"></div>
 
     <!-- স্ক্রিপ্ট -->
     <script src="assets/js/main.js"></script>
