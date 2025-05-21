@@ -1,14 +1,16 @@
-<header class="bg-[#181E38] !important border-b border-gray-700 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<header class="bg-white dark:bg-[#181E38] border-b border-gray-200 dark:border-gray-700 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <!-- লোগো -->
             <div class="flex items-center gap-3">
                 <a href="index.html" class="focus:outline-none rounded-lg p-1">
-                    <img
-                        src="assets/images/kothika-logo.png"
-                        alt="Kothika Logo"
-                        class="h-10 w-auto"
-                    />
+                    <div class="bg-[#181E38] dark:bg-transparent p-2 rounded-lg">
+                        <img
+                            src="assets/images/kothika-logo.png"
+                            alt="Kothika Logo"
+                            class="h-10 w-auto"
+                        />
+                    </div>
                 </a>
             </div>
 
@@ -19,9 +21,9 @@
                         type="text" 
                         id="searchInput"
                         placeholder="কোর্স, ব্লগ, বা যেকোনো কিছু খুঁজুন..." 
-                        class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none placeholder-gray-400"
+                        class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none placeholder-gray-500 dark:placeholder-gray-400"
                     >
-                    <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white focus:outline-none rounded-lg p-1">
+                    <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none rounded-lg p-1">
                         <i data-lucide="search" class="w-5 h-5"></i>
                     </button>
                 </form>
@@ -31,7 +33,7 @@
             <div id="searchResults" class="hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-800 !important shadow-lg rounded-lg mt-2 p-4 z-50">
                 <div class="max-w-7xl mx-auto">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">সার্চ রেজাল্ট</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-200">সার্চ রেজাল্ট</h3>
                         <button id="closeSearchResults" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
                             <i data-lucide="x" class="w-5 h-5"></i>
                         </button>
@@ -47,38 +49,38 @@
 
             <!-- ডেস্কটপ নেভিগেশন মেনু -->
             <nav class="hidden lg:flex items-center gap-8">
-                <a href="index.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
+                <a href="index.html" class="group text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
                     <i data-lucide="home" class="w-6 h-6"></i>
-                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">হোম</span>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">হোম</span>
                 </a>
-                <a href="courses.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
+                <a href="courses.html" class="group text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
                     <i data-lucide="book-open-text" class="w-6 h-6"></i>
-                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">কোর্স</span>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">কোর্স</span>
                 </a>
-                <a href="blog.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
+                <a href="blog.html" class="group text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
                     <i data-lucide="newspaper" class="w-6 h-6"></i>
-                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">ব্লগ</span>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">ব্লগ</span>
                 </a>
-                <a href="about.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
+                <a href="about.html" class="group text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
                     <i data-lucide="info" class="w-6 h-6"></i>
-                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">আমাদের সম্পর্কে</span>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">আমাদের সম্পর্কে</span>
                 </a>
-                <a href="contact.html" class="group text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
+                <a href="contact.html" class="group text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-all duration-300 transform hover:scale-110 relative focus:outline-none rounded-lg p-2">
                     <i data-lucide="mail" class="w-6 h-6"></i>
-                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">যোগাযোগ</span>
+                    <span class="tooltip absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">যোগাযোগ</span>
                 </a>
             </nav>
 
             <!-- ডান পাশের এলাকা -->
             <div class="flex items-center gap-6">
                 <!-- মোবাইল মেনু বাটন -->
-                <button id="mobileMenuBtn" class="lg:hidden text-white p-2 hover:bg-gray-700 rounded-lg transition-colors focus:outline-none">
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
                 
                 <!-- লগইন/রেজিস্টার বাটন -->
                 <div class="hidden md:flex items-center gap-3">
-                    <a href="#" class="px-4 py-1.5 text-sm text-gray-300 border border-gray-600 rounded hover:bg-gray-700 transition focus:outline-none">
+                    <a href="#" class="px-4 py-1.5 text-sm text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition focus:outline-none">
                         লগইন
                     </a>
                     <a href="#" class="px-4 py-1.5 text-sm text-white bg-[#E94742] hover:bg-[#d13a36] rounded transition focus:outline-none">
@@ -91,15 +93,15 @@
                     <button id="userMenuBtn" class="flex items-center gap-1 focus:outline-none rounded-lg p-1 group">
                         <div class="relative">
                             <!-- লগআউট অবস্থায় ম্যান আইকন -->
-                            <div id="defaultUserIcon" class="w-10 h-10 rounded-full border-2 border-gray-600 group-hover:border-[#E94742] transition-colors bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                                <i data-lucide="user-circle" class="w-6 h-6 text-gray-300"></i>
+                            <div id="defaultUserIcon" class="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-[#E94742] transition-colors bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                                <i data-lucide="user-circle" class="w-6 h-6 text-gray-700 dark:text-gray-300"></i>
                             </div>
                             <!-- লগইন অবস্থায় প্রোফাইল পিকচার -->
                             <img 
                                 id="userProfileImage"
                                 src="assets/images/user-default.png" 
                                 alt="User" 
-                                class="w-10 h-10 rounded-full border-2 border-gray-600 group-hover:border-[#E94742] transition-colors hidden"
+                                class="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-[#E94742] transition-colors hidden"
                             />
                             <div class="absolute -bottom-1 -right-1 bg-[#E94742] rounded-full p-0.5">
                                 <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-white"></i>
@@ -108,12 +110,12 @@
                     </button>
                     
                     <!-- ড্রপডাউন মেনু -->
-                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-56 bg-gray-800 !important rounded-md shadow-lg py-1 z-50 border border-gray-700">
+                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 !important rounded-md shadow-lg py-1 z-50 border border-gray-200 dark:border-gray-700">
                         <!-- লগইন না থাকলে -->
-                        <div id="notLoggedIn" class="px-5 py-4 border-b border-gray-700">
-                            <p class="text-base text-gray-300 mb-3">আপনি লগইন করেননি</p>
+                        <div id="notLoggedIn" class="px-5 py-4 border-b border-gray-200 dark:border-gray-700">
+                            <p class="text-base text-gray-700 dark:text-gray-300 mb-3">আপনি লগইন করেননি</p>
                             <div class="space-y-3">
-                                <a href="#" class="block w-full px-4 py-2.5 text-base text-center text-gray-300 border border-gray-600 rounded hover:bg-gray-700 transition">
+                                <a href="#" class="block w-full px-4 py-2.5 text-base text-center text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                                     লগইন
                                 </a>
                                 <a href="#" class="block w-full px-4 py-2.5 text-base text-center text-white bg-[#E94742] rounded hover:bg-[#d13a36] transition">
@@ -124,41 +126,41 @@
 
                         <!-- লগইন থাকলে -->
                         <div id="loggedIn" class="hidden">
-                            <div class="px-5 py-4 border-b border-gray-700">
+                            <div class="px-5 py-4 border-b border-gray-200 dark:border-gray-700">
                                 <div class="flex items-center gap-4">
                                     <img 
                                         id="loggedInProfileImage"
                                         src="assets/images/user-default.png" 
                                         alt="User" 
-                                        class="w-12 h-12 rounded-full border-2 border-gray-600"
+                                        class="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-gray-600"
                                     />
                                     <div>
-                                        <p class="text-base font-medium text-gray-200">ইউজার নাম</p>
-                                        <p class="text-sm text-gray-400">user@email.com</p>
+                                        <p class="text-base font-medium text-gray-900 dark:text-gray-200">ইউজার নাম</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">user@email.com</p>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
                                 <i data-lucide="user" class="w-5 h-5 mr-2 inline"></i> প্রোফাইল
                             </a>
-                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
                                 <i data-lucide="bookmark" class="w-5 h-5 mr-2 inline"></i> সেভ করা
                             </a>
-                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
                                 <i data-lucide="bell" class="w-5 h-5 mr-2 inline"></i> নোটিফিকেশন
                             </a>
-                            <a href="#" class="block px-5 py-2.5 text-base text-gray-300 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                            <a href="#" class="block px-5 py-2.5 text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
                                 <i data-lucide="settings" class="w-5 h-5 mr-2 inline"></i> সেটিংস
                             </a>
-                            <a href="#" class="block px-5 py-2.5 text-base text-red-400 hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
+                            <a href="#" class="block px-5 py-2.5 text-base text-red-500 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors focus:outline-none rounded-lg mx-2">
                                 <i data-lucide="log-out" class="w-5 h-5 mr-2 inline"></i> লগআউট
                             </a>
                         </div>
 
                         <!-- ডার্ক মোড টগল -->
-                        <div class="px-5 py-3 border-t border-gray-700">
-                            <p class="text-base font-medium text-gray-300 mb-2">ডার্ক মোড</p>
-                            <button id="themeToggle" class="flex items-center space-x-2 w-full px-4 py-2.5 text-base text-gray-300 hover:bg-gray-700 focus:outline-none rounded-lg">
+                        <div class="px-5 py-3 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">ডার্ক মোড</p>
+                            <button id="themeToggle" class="flex items-center space-x-2 w-full px-4 py-2.5 text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg">
                                 <i data-lucide="sun" class="w-5 h-5"></i>
                                 <i data-lucide="moon" class="w-5 h-5 hidden"></i>
                                 <span>ডার্ক মোড</span>
@@ -171,11 +173,11 @@
 
         <!-- মোবাইল মেনু -->
         <div id="mobileMenu" class="lg:hidden hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-40">
-            <div class="fixed inset-y-0 right-0 w-64 bg-[#181E38] !important shadow-lg transform transition-transform duration-300 ease-in-out">
+            <div class="fixed inset-y-0 right-0 w-64 bg-white dark:bg-[#181E38] !important shadow-lg transform transition-transform duration-300 ease-in-out">
                 <div class="p-4">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-white text-lg font-semibold">মেনু</h3>
-                        <button id="closeMobileMenu" class="text-gray-300 hover:text-white focus:outline-none rounded-lg p-1">
+                        <h3 class="text-gray-900 dark:text-white text-lg font-semibold">মেনু</h3>
+                        <button id="closeMobileMenu" class="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white focus:outline-none rounded-lg p-1">
                             <i data-lucide="x" class="w-6 h-6"></i>
                         </button>
                     </div>
@@ -187,19 +189,19 @@
                                 type="text" 
                                 id="mobileSearchInput"
                                 placeholder="খুঁজুন..." 
-                                class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none placeholder-gray-400"
+                                class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none placeholder-gray-500 dark:placeholder-gray-400"
                             >
-                            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white focus:outline-none rounded-lg p-1">
+                            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none rounded-lg p-1">
                                 <i data-lucide="search" class="w-5 h-5"></i>
                             </button>
                         </form>
                     </div>
 
                     <!-- মোবাইল সার্চ রেজাল্ট -->
-                    <div id="mobileSearchResults" class="hidden mt-4 bg-gray-800 rounded-lg p-4">
+                    <div id="mobileSearchResults" class="hidden mt-4 bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-semibold text-white">সার্চ রেজাল্ট</h3>
-                            <button id="closeMobileSearchResults" class="text-gray-400 hover:text-white">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">সার্চ রেজাল্ট</h3>
+                            <button id="closeMobileSearchResults" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white">
                                 <i data-lucide="x" class="w-5 h-5"></i>
                             </button>
                         </div>
@@ -207,38 +209,38 @@
                             <!-- সার্চ রেজাল্ট এখানে দেখাবে -->
                         </div>
                         <div id="mobileNoResults" class="hidden text-center py-8">
-                            <p class="text-gray-400">কোন ফলাফল পাওয়া যায়নি</p>
+                            <p class="text-gray-500 dark:text-gray-400">কোন ফলাফল পাওয়া যায়নি</p>
                         </div>
                     </div>
 
                     <!-- মোবাইল নেভিগেশন -->
                     <nav class="space-y-4">
-                        <a href="index.html" class="flex items-center gap-3 text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
+                        <a href="index.html" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
                             <i data-lucide="home" class="w-5 h-5"></i>
                             <span>হোম</span>
                         </a>
-                        <a href="courses.html" class="flex items-center gap-3 text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
+                        <a href="courses.html" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
                             <i data-lucide="book-open-text" class="w-5 h-5"></i>
                             <span>কোর্স</span>
                         </a>
-                        <a href="blog.html" class="flex items-center gap-3 text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
+                        <a href="blog.html" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
                             <i data-lucide="newspaper" class="w-5 h-5"></i>
                             <span>ব্লগ</span>
                         </a>
-                        <a href="about.html" class="flex items-center gap-3 text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
+                        <a href="about.html" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
                             <i data-lucide="info" class="w-5 h-5"></i>
                             <span>আমাদের সম্পর্কে</span>
                         </a>
-                        <a href="contact.html" class="flex items-center gap-3 text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
+                        <a href="contact.html" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-[#E94742] transition-colors focus:outline-none rounded-lg p-2">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span>যোগাযোগ</span>
                         </a>
                     </nav>
 
                     <!-- মোবাইল ডার্ক মোড টগল -->
-                    <div class="mt-6 p-4 border-t border-gray-700">
-                        <p class="text-sm font-medium text-gray-300 mb-2">ডার্ক মোড</p>
-                        <button id="mobileThemeToggle" class="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 focus:outline-none rounded-lg">
+                    <div class="mt-6 p-4 border-t border-gray-200 dark:border-gray-700">
+                        <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">ডার্ক মোড</p>
+                        <button id="mobileThemeToggle" class="flex items-center space-x-2 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg">
                             <i data-lucide="sun" class="w-5 h-5"></i>
                             <i data-lucide="moon" class="w-5 h-5 hidden"></i>
                             <span>ডার্ক মোড</span>
@@ -247,7 +249,7 @@
 
                     <!-- মোবাইল লগইন/রেজিস্টার -->
                     <div class="mt-8 space-y-3">
-                        <a href="#" class="block w-full px-4 py-2 text-center text-sm text-gray-300 border border-gray-600 rounded hover:bg-gray-700 transition focus:outline-none">
+                        <a href="#" class="block w-full px-4 py-2 text-center text-sm text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition focus:outline-none">
                             লগইন
                         </a>
                         <a href="#" class="block w-full px-4 py-2 text-center text-sm text-white bg-[#E94742] hover:bg-[#d13a36] rounded transition focus:outline-none">
@@ -262,3 +264,65 @@
 
 <!-- Add padding to main content to account for fixed header -->
 <div class="h-16"></div>
+
+<script>
+    // Header scroll effect
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Always maintain the header's background color
+        if (document.documentElement.classList.contains('dark')) {
+            header.classList.remove('bg-white');
+            header.classList.add('bg-[#181E38]');
+        } else {
+            header.classList.remove('bg-[#181E38]');
+            header.classList.add('bg-white');
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const sunIcon = themeToggle.querySelector('[data-lucide="sun"]');
+    const moonIcon = themeToggle.querySelector('[data-lucide="moon"]');
+    const mobileSunIcon = mobileThemeToggle.querySelector('[data-lucide="sun"]');
+    const mobileMoonIcon = mobileThemeToggle.querySelector('[data-lucide="moon"]');
+
+    function updateThemeIcons(isDark) {
+        if (isDark) {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            mobileSunIcon.classList.add('hidden');
+            mobileMoonIcon.classList.remove('hidden');
+        } else {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            mobileSunIcon.classList.remove('hidden');
+            mobileMoonIcon.classList.add('hidden');
+        }
+    }
+
+    function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeIcons(isDark);
+    }
+
+    themeToggle.addEventListener('click', toggleTheme);
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        updateThemeIcons(true);
+    } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcons(false);
+    }
+</script>
