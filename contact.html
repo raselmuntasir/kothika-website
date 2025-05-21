@@ -362,11 +362,6 @@
             // Initialize Lucide icons
             lucide.createIcons();
             
-            // Initialize header menu
-            if (typeof initializeHeaderMenu === 'function') {
-                initializeHeaderMenu();
-            }
-            
             // Load includes
             const includes = document.querySelectorAll('[data-include]');
             includes.forEach(include => {
@@ -385,7 +380,7 @@
                                 if (typeof initializeHeaderMenu === 'function') {
                                     initializeHeaderMenu();
                                 }
-                            }, 0);
+                            }, 100); // Increased timeout to ensure DOM is updated
                         }
                     })
                     .catch(error => console.error('Error loading include:', error));
